@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Cab | Bengaluru Car Rentals</title>
+  <meta name="description" content="Complete your cab booking with Bengaluru Car Rentals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="booking-page">
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <div class="nav-item">
+          <a href="index.html#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+919152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- Booking Hero Bar -->
+  <section class="bk-hero">
+    <div class="bk-hero-bg">
+      <img src="assets/images/airport.jpg"
+        alt="Book cab Bangalore" class="bk-hero-img" />
+      <div class="bk-hero-overlay"></div>
+    </div>
+    <div class="bk-hero-content">
+      <nav class="at-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="airport-taxi.html" id="bkBackLink">Airport Taxi</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Book Now</span>
+      </nav>
+      <h1 class="bk-hero-title">Complete Your <em>Booking</em></h1>
+      <p class="bk-hero-sub">You're one step away from a comfortable, verified ride.</p>
+    </div>
+  </section>
+
+  <!-- Main Booking Area -->
+  <section class="bk-section">
+    <div class="section-container">
+      <div class="bk-grid">
+
+        <!-- Selected Car Panel -->
+        <aside class="bk-car-panel" id="bkCarPanel">
+          <div class="bk-car-img-wrap">
+            <img id="bkCarImg" src="" alt="Selected cab" />
+          </div>
+          <div class="bk-car-info">
+            <div class="bk-car-tag">Selected Vehicle</div>
+            <h2 id="bkCarName">—</h2>
+            <div class="bk-car-meta">
+              <span id="bkCarSeats"><i class="fa-solid fa-users"></i> —</span>
+              <span id="bkCarLuggage"><i class="fa-solid fa-suitcase"></i> —</span>
+            </div>
+            <div class="bk-car-stars">★★★★★</div>
+            <div class="bk-car-price" id="bkCarPrice">—</div>
+            <div class="bk-car-toll" id="bkCarToll">—</div>
+            <div class="at-return-offer">
+              <i class="fa-solid fa-tag"></i>
+              Book a return cab and save <strong>5%</strong> on your return journey!
+            </div>
+            <a href="airport-taxi.html" class="bk-change-car">
+              <i class="fa-solid fa-arrow-left"></i> Change Vehicle
+            </a>
+          </div>
+        </aside>
+
+        <!-- Form -->
+        <div class="bk-form-wrap">
+          <form id="bkForm" novalidate>
+
+            <div class="at-form-group">
+              <label class="at-form-label">Trip Option <span class="at-required">*</span></label>
+              <div class="at-radio-group">
+                <label class="at-radio-label">
+                  <input type="radio" name="tripOption" value="City to Airport" />
+                  <span class="at-radio-custom"></span>
+                  <i class="fa-solid fa-plane-departure"></i> City to Airport
+                </label>
+                <label class="at-radio-label">
+                  <input type="radio" name="tripOption" value="Airport to City" />
+                  <span class="at-radio-custom"></span>
+                  <i class="fa-solid fa-plane-arrival"></i> Airport to City
+                </label>
+              </div>
+              <small class="at-error" id="err-tripOption"></small>
+            </div>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkName">Full Name <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkName" placeholder="Your full name" />
+                <small class="at-error" id="err-bkName"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkPhone">Mobile Number <span class="at-required">*</span></label>
+                <input class="at-form-input" type="tel" id="bkPhone" maxlength="10" placeholder="10-digit number" />
+                <small class="at-error" id="err-bkPhone"></small>
+              </div>
+            </div>
+
+            <div class="at-form-group">
+              <label class="at-form-label" for="bkEmail">Email Address <span class="at-required">*</span></label>
+              <input class="at-form-input" type="email" id="bkEmail" placeholder="your@email.com" />
+              <small class="at-error" id="err-bkEmail"></small>
+            </div>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkPickup">Pickup Address <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkPickup" placeholder="Your pickup address" />
+                <small class="at-error" id="err-bkPickup"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkDrop">Drop Address <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkDrop" placeholder="Your drop address" />
+                <small class="at-error" id="err-bkDrop"></small>
+              </div>
+            </div>
+
+            <div class="at-form-group">
+              <label class="at-form-label" for="bkLandmark">Nearest Landmark</label>
+              <input class="at-form-input" type="text" id="bkLandmark" placeholder="Optional" />
+            </div>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkDate">Select Date <span class="at-required">*</span></label>
+                <input class="at-form-input" type="date" id="bkDate" />
+                <small class="at-error" id="err-bkDate"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkTime">Select Time <span class="at-required">*</span></label>
+                <input class="at-form-input" type="time" id="bkTime" />
+                <small class="at-error" id="err-bkTime"></small>
+              </div>
+            </div>
+
+            <div class="at-form-group at-checkbox-group">
+              <label class="at-checkbox-label">
+                <input type="checkbox" id="bkReturn" />
+                <span class="at-checkbox-custom"></span>
+                Book Return Cab <span class="at-save-tag">Save 5%</span>
+              </label>
+            </div>
+
+            <button type="submit" class="at-btn-submit">
+              <i class="fa-solid fa-plane-departure"></i>
+              <span>Confirm Booking</span>
+            </button>
+          </form>
+
+          <!-- Success -->
+          <div class="at-form-success" id="bkSuccess" style="display:none;">
+            <div class="at-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Booking Submitted!</h3>
+            <p>Your airport taxi booking has been submitted successfully. Our team will contact you shortly.</p>
+            <a href="#" class="at-btn-wa-booking" id="bkWaBtn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Send Booking on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="section-container">
+        <div class="footer-cta">
+          <h2>Need Help? <em>Call Us</em></h2>
+          <div class="footer-cta-actions">
+            <a href="tel:+919152333388" class="btn-gold"><i class="fa-solid fa-phone"></i> +91 9152333388</a>
+            <a href="https://wa.me/919152333388" target="_blank" class="btn-ghost-dark">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

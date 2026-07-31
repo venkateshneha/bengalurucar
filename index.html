@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Cab Service in Bangalore | Bengaluru Car Rentals</title>
+  <meta name="description"
+    content="Bengaluru Car Rentals offers premium airport taxi, local car rental, outstation cabs, and corporate travel services in Bangalore with verified drivers and transparent pricing." />
+  <meta name="keywords" content="cab service in Bangalore, Bengaluru car rentals, airport taxi Bangalore, outstation cabs Bangalore, local taxi Bangalore, Innova cab Bangalore, tempo traveller Bangalore">
+<link rel="canonical" href="https://www.bengalurucarrentals.com/">
+
+<meta property="og:title" content="Best Cab Service in Bangalore | Bengaluru Car Rentals">
+<meta property="og:description" content="Book airport taxi, local cabs, outstation cabs and tour packages in Bangalore with clean vehicles and verified drivers.">
+<meta property="og:image" content="https://www.bengalurucarrentals.com/assets/images/og-image.jpg">
+<meta property="og:url" content="https://www.bengalurucarrentals.com/">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "Bengaluru Car Rentals",
+  "url": "https://www.bengalurucarrentals.com/",
+  "telephone": "+919152333388",
+  "email": "info@bengalurucarrentals.com",
+  "areaServed": "Bangalore, Karnataka",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bangalore",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+
+        <!-- Services with dropdown -->
+        <div class="nav-item">
+          <a href="#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link"></a>
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <a href="#booking" class="btn-gold">Book Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+91 9152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-img-wrap">
+        <img src="assets/images/bk.jpg"
+          alt="Premium cab service" class="hero-img" />
+      </div>
+      <div class="hero-vignette"></div>
+      <div class="noise-overlay"></div>
+    </div>
+
+    <div class="hero-content-wrap">
+      <div class="hero-tag animate-up delay-1">
+        <span class="tag-dot"></span>
+        Premium Taxi Service in Bangalore
+      </div>
+
+      <h1 class="hero-title animate-up delay-2">
+  <span class="line-wrap"><span class="line">Premium Cab Service</span></span>
+  <span class="line-wrap italic"><span class="line">in Bangalore</span></span>
+</h1>
+
+      <p class="hero-sub animate-up delay-3">
+        Verified drivers. Clean vehicles. Transparent pricing.<br />
+        Bangalore's finest cab service — available 24/7.
+      </p>
+
+      <div class="hero-ctas animate-up delay-4">
+        <a href="#booking" class="btn-gold">
+          <span>Book Your Ride</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20cab" target="_blank" class="btn-ghost">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+
+      <div class="hero-stats animate-up delay-5">
+        <div class="stat">
+          <span class="stat-num">5K+</span>
+          <span class="stat-label">Happy Riders</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Support</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Verified</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="booking-panel animate-right" id="booking">
+      <div class="booking-panel-header">
+        <div class="panel-label">Reserve Your Cab</div>
+        <h2>Quick Booking</h2>
+      </div>
+
+      <form id="bookingForm" novalidate>
+        <div class="field-group">
+          <div class="field-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="field-body">
+            <label for="pickup">Pickup Location</label>
+            <input type="text" id="pickup" name="pickup" placeholder="Where from?" />
+            <small class="error"></small>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-icon drop-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+          <div class="field-body">
+            <label for="drop">Drop Location</label>
+            <input type="text" id="drop" name="drop" placeholder="Where to?" />
+            <small class="error"></small>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group half">
+            <div class="field-icon"><i class="fa-solid fa-calendar"></i></div>
+            <div class="field-body">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+              <small class="error"></small>
+            </div>
+          </div>
+          <div class="field-group half">
+            <div class="field-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="field-body">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" />
+              <small class="error"></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group half">
+            <div class="field-icon"><i class="fa-solid fa-route"></i></div>
+            <div class="field-body">
+              <label for="tripType">Trip Type</label>
+              <select id="tripType" name="tripType">
+                <option value="">Select type</option>
+                <option value="Local">Local</option>
+                <option value="Outstation">Outstation</option>
+                <option value="Airport">Airport</option>
+              </select>
+              <small class="error"></small>
+            </div>
+          </div>
+          <div class="field-group half">
+            <div class="field-icon"><i class="fa-solid fa-car"></i></div>
+            <div class="field-body">
+              <label for="carType">Car Type</label>
+              <select id="carType" name="carType">
+                <option value="">Select car</option>
+                <option value="Swift Dzire">Swift Dzire</option>
+                <option value="Toyota Etios">Toyota Etios</option>
+                <option value="Maruti Ciaz">Maruti Ciaz</option>
+                <option value="Maruti Ertiga">Maruti Ertiga</option>
+                <option value="Kia Carens">Kia Carens</option>
+                <option value="Toyota Innova">Toyota Innova</option>
+                <option value="Innova Crysta">Innova Crysta</option>
+                <option value="Innova Hycross">Innova Hycross</option>
+                <option value="Tempo Traveller">Tempo Traveller (A/C)</option>
+                <option value="Mini Bus">Mini Bus (A/C)</option>
+              </select>
+              <small class="error"></small>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span>Confirm Booking</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services-section" id="services">
+    <div class="section-container">
+      <div class="split-header reveal">
+        <div class="split-left">
+          <p class="section-eyebrow">Our Services</p>
+          <h2 class="section-heading">Travel Solutions<br /><em>for Every Ride</em></h2>
+        </div>
+        <div class="split-right">
+          <p class="section-desc">From quick city commutes to long outstation journeys, we have the right vehicle and
+            service for every occasion — with drivers who know Bangalore inside out.</p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal" data-index="1">
+          <div class="service-num">01</div>
+          <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <h3>Airport Transfer</h3>
+          <p>On-time airport pickups and drop-offs with luggage-friendly, comfortable cars. Flight tracking included.
+          </p>
+          <a href="airport-taxi.html" class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" data-index="2">
+          <div class="service-num">02</div>
+          <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+          <h3>Local Cabs</h3>
+          <p>Flexible hourly and full-day packages for shopping, meetings, and all your city travel needs.</p>
+          <a href="local-cabs.html" class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" data-index="3">
+          <div class="service-num">03</div>
+          <div class="service-icon"><i class="fa-solid fa-road"></i></div>
+          <h3>Outstation Cabs</h3>
+          <p>Smooth one-way and round-trip rides to Mysore, Coorg, Ooty, and more. One flat rate, no surprises.</p>
+          <a href="outstation-cabs.html" class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></a>
+        </article>
+
+        <article class="service-card reveal" data-index="4">
+          <div class="service-num">04</div>
+          <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Tour Packages</h3>
+          <p>Hassle-free tour packages with reliable transport for exploring destinations, designed for comfort and
+            convenience.</p>
+          <a href="tour-packages.html" class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet -->
+  <section class="section fleet-section" id="fleet">
+    <div class="fleet-bg-text">FLEET</div>
+    <div class="section-container">
+      <div class="center-header reveal">
+        <p class="section-eyebrow">Our Fleet</p>
+        <h2 class="section-heading">Choose the Right<br /><em>Vehicle for Your Journey</em></h2>
+      </div>
+
+      <div class="fleet-grid">
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/swift.jpg"
+              alt="Swift Dzire" />
+          </div>
+          <div class="fleet-body">
+            <h3>Swift Dzire</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 4 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 2 Medium Bags</li>
+              <li><i class="fa-solid fa-star"></i> Comfortable City Sedan</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/etios.jpg"
+              alt="Toyota Etios" />
+          </div>
+          <div class="fleet-body">
+            <h3>Toyota Etios</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 4 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 2 Medium Bags</li>
+              <li><i class="fa-solid fa-star"></i> Smooth &amp; Reliable Ride</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/ciaz.jpg"
+              alt="Maruti Ciaz" />
+          </div>
+          <div class="fleet-body">
+            <h3>Maruti Ciaz</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 4 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 3 Medium Bags</li>
+              <li><i class="fa-solid fa-star"></i> Premium Sedan Comfort</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/ertiga.jpg"
+              alt="Maruti Ertiga" />
+          </div>
+          <div class="fleet-body">
+            <h3>Maruti Ertiga</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 6 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 3 Large Bags</li>
+              <li><i class="fa-solid fa-star"></i> Ideal for Family Trips</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card featured reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/caren.jpg"
+              alt="Kia Carens" />
+          </div>
+          <div class="fleet-body">
+            <h3>Kia Carens</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 6 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 3 Large Bags</li>
+              <li><i class="fa-solid fa-star"></i> Modern &amp; Spacious MPV</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/innovas.jpg"
+              alt="Toyota Innova" />
+          </div>
+          <div class="fleet-body">
+            <h3>Toyota Innova</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 7 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 4 Large Bags</li>
+              <li><i class="fa-solid fa-star"></i> Best for Group Travel</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card featured reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/crysta.jpg"
+              alt="Innova Crysta" />
+          </div>
+          <div class="fleet-body">
+            <h3>Innova Crysta</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 7 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 4 Large Bags</li>
+              <li><i class="fa-solid fa-star"></i> Premium Outstation Comfort</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card featured reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/hycros.jpg"
+              alt="Innova Hycross" />
+          </div>
+          <div class="fleet-body">
+            <h3>Innova Hycross</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 7 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> 4 Large Bags</li>
+              <li><i class="fa-solid fa-star"></i> Luxury Hybrid Experience</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/tempo.jpg"
+              alt="Tempo Traveller AC" />
+          </div>
+          <div class="fleet-body">
+            <h3>Tempo Traveller (A/C)</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 12 Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> Large Group Luggage</li>
+              <li><i class="fa-solid fa-star"></i> Ideal for Group Tours</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="fleet-card reveal">
+          <div class="fleet-img-wrap">
+            <img src="assets/images/minibus.jpg"
+              alt="Mini Bus AC" />
+          </div>
+          <div class="fleet-body">
+            <h3>Mini Bus (A/C)</h3>
+            <ul class="fleet-features">
+              <li><i class="fa-solid fa-users"></i> 20+ Seater</li>
+              <li><i class="fa-solid fa-suitcase"></i> Bulk Luggage Space</li>
+              <li><i class="fa-solid fa-star"></i> Corporate &amp; Event Travel</li>
+            </ul>
+            <a href="#booking" class="fleet-cta">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us + Tariff -->
+  <section class="section trust-section" id="tariff">
+    <div class="section-container">
+      <div class="trust-grid">
+        <div class="trust-left reveal">
+          <p class="section-eyebrow">Why Choose Us</p>
+          <h2 class="section-heading">Comfort, Safety,<br /><em>and Service</em></h2>
+          <p class="trust-desc">Every ride reflects our promise — professional drivers, clean vehicles, and zero hidden
+            charges. We set the gold standard for cab services in Bangalore.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-icon"><i class="fa-solid fa-user-check"></i></div>
+              <div>
+                <h4>Experienced Drivers</h4>
+                <p>Professional, polite, and route-aware chauffeurs.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fa-solid fa-tags"></i></div>
+              <div>
+                <h4>Transparent Pricing</h4>
+                <p>No surprise charges. Honest fares every time.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+              <div>
+                <h4>24/7 Support</h4>
+                <p>Always available for bookings and urgent requests.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+              <div>
+                <h4>Clean Vehicles</h4>
+                <p>Hygienic, well-maintained cars for every ride.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trust-right reveal">
+          <div class="tariff-panel">
+            <div class="tariff-panel-header">
+              <p class="section-eyebrow">Tariff Highlights</p>
+              <h3>Transparent Pricing<br /><em>You Can Trust</em></h3>
+            </div>
+            <div class="tariff-item">
+              <div class="tariff-icon"><i class="fa-solid fa-plane"></i></div>
+              <div class="tariff-text">
+                <h4>Airport Pickup / Drop</h4>
+                <p>Fixed rates for all major Bangalore airport routes.</p>
+              </div>
+              <div class="tariff-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="tariff-item">
+              <div class="tariff-icon"><i class="fa-solid fa-city"></i></div>
+              <div class="tariff-text">
+                <h4>Local Packages</h4>
+                <p>Affordable hourly and full-day cab rental options.</p>
+              </div>
+              <div class="tariff-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="tariff-item">
+              <div class="tariff-icon"><i class="fa-solid fa-road"></i></div>
+              <div class="tariff-text">
+                <h4>Outstation Trips</h4>
+                <p>One-way and round-trip with zero hidden charges.</p>
+              </div>
+              <div class="tariff-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <a href="#booking" class="btn-gold full">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="testimonials-bg">
+      <img src="assets/images/bk.jpg" alt="" />
+      <div class="testimonials-overlay"></div>
+    </div>
+    <div class="section-container">
+      <div class="center-header reveal">
+        <p class="section-eyebrow light">Testimonials</p>
+        <h2 class="section-heading light">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-carousel reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide active">
+            <div class="quote-mark">"</div>
+            <p>Very professional cab service. The driver arrived on time for our airport drop and the car was extremely
+              clean. Would book again without hesitation.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">PS</div>
+              <div>
+                <h4>Priya S.</h4><span>Airport Transfer</span>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="quote-mark">"</div>
+            <p>Booked an Innova for our family trip to Coorg. Smooth ride, fair price, and great support on WhatsApp.
+              The driver was very courteous and knew all the routes.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RM</div>
+              <div>
+                <h4>Raghav M.</h4><span>Outstation Trip</span>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="quote-mark">"</div>
+            <p>The booking process was super easy and the pricing was completely transparent. Highly recommended for
+              Bangalore local and outstation rides. A truly premium experience.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AK</div>
+              <div>
+                <h4>Arun K.</h4><span>Corporate Ride</span>
+              </div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" id="prevBtn"><i class="fa-solid fa-arrow-left"></i></button>
+          <div class="carousel-dots" id="carouselDots">
+            <button class="cdot active" data-slide="0"></button>
+            <button class="cdot" data-slide="1"></button>
+            <button class="cdot" data-slide="2"></button>
+          </div>
+          <button class="carousel-btn next" id="nextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="section-container">
+        <div class="footer-cta reveal">
+          <h2>Ready for Your<br /><em>Next Ride?</em></h2>
+          <div class="footer-cta-actions">
+            <a href="#booking" class="btn-gold">Book Now</a>
+            <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20cab" target="_blank"
+              class="btn-ghost-dark">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-body">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+            </a>
+            <p>Premium cab booking service in Bangalore for airport transfers, local trips, Tour Packages, and
+              outstation travel.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="why-choose-us.html">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="airport-taxi.html">Airport Taxi</a></li>
+              <li><a href="local-cabs.html">Local Cabs</a></li>
+              <li><a href="outstation-cabs.html">Outstation Cabs</a></li>
+              <li><a href="tour-packages.html">Tour Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+919152333388">+91 9152333388</a></li>
+              <li><i class="fa-solid fa-envelope"></i> info@bengalurucarrentals.com</li>
+              <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20cab" class="whatsapp-float" target="_blank"
+    aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Mobile dropdown toggle
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+
+</html>

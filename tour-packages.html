@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Packages Bangalore | Bengaluru Car Rentals</title>
+  <meta name="description"
+    content="Book tour packages from Bangalore. Mysore, Coorg, Ooty, Chikmagalur, Wayanad and more. Verified drivers, clean cars, transparent pricing." />
+  <meta name="keywords"
+    content="tour packages Bangalore, Mysore tour cab, Coorg cab Bangalore, Ooty tour package Bangalore, Bengaluru tour packages" />
+  <link rel="canonical" href="https://www.bengalurucarrentals.com/tour-packages.html" />
+  <meta property="og:title" content="Tour Packages Bangalore | Bengaluru Car Rentals" />
+  <meta property="og:description"
+    content="Book tour packages from Bangalore. Mysore, Coorg, Ooty, Chikmagalur, Wayanad and more." />
+  <meta property="og:url" content="https://www.bengalurucarrentals.com/tour-packages.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+</head>
+
+<body class="tour-packages-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <div class="nav-item">
+          <a href="index.html#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <a href="#tp-packages-section" class="btn-gold">Book Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+919152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="tp-hero">
+    <div class="tp-hero-bg">
+      <img
+        src="assets/images/contact.jpg"
+        alt="Tour packages from Bangalore" class="tp-hero-img" />
+      <div class="tp-hero-overlay"></div>
+    </div>
+    <div class="tp-hero-content">
+      <nav class="at-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Tour Packages</span>
+      </nav>
+      <h1 class="tp-hero-title">Tour Packages from Bangalore</h1>
+      <p class="tp-hero-sub">
+        Handpicked day trips &amp; multi-day tours from Bangalore.
+        Verified drivers, AC vehicles and no hidden charges — always.
+      </p>
+      <div class="tp-hero-badges">
+        <span><i class="fa-solid fa-map-location-dot"></i> Curated Destinations</span>
+        <span><i class="fa-solid fa-user-check"></i> Verified Drivers</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Safe &amp; Hygienic</span>
+        <span><i class="fa-solid fa-tags"></i> Transparent Pricing</span>
+      </div>
+      <div class="tp-hero-ctas">
+        <a href="#tp-packages-section" class="btn-gold">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Explore Packages</span>
+        </a>
+        <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20Tour%20Package%20from%20Bangalore"
+          target="_blank" class="btn-ghost">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Info Strip -->
+  <div class="tp-pkg-strip">
+    <div class="section-container">
+      <div class="tp-pkg-grid">
+        <div class="tp-pkg-item">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <div>
+            <strong>9 Destinations</strong>
+            <span>Popular routes covered</span>
+          </div>
+        </div>
+        <div class="tp-pkg-item">
+          <i class="fa-solid fa-moon"></i>
+          <div>
+            <strong>1 to 7 Days</strong>
+            <span>Flexible trip durations</span>
+          </div>
+        </div>
+        <div class="tp-pkg-item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <div>
+            <strong>All Inclusive</strong>
+            <span>Transparent, no hidden charges</span>
+          </div>
+        </div>
+        <div class="tp-pkg-item">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <strong>24/7 Support</strong>
+            <span>Round-the-clock assistance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages Listing -->
+  <section class="tp-packages-section" id="tp-packages-section">
+    <div class="section-container">
+      <div class="tp-packages-header reveal">
+        <p class="section-eyebrow">Select Your Package</p>
+        <h2 class="section-heading">Tour Packages from Bangalore, <em>Best Prices</em></h2>
+        <p class="tp-packages-desc">Choose from our curated tour packages for your next getaway.</p>
+      </div>
+
+      <div class="tp-packages-grid">
+
+        <!-- 1. Bangalore to Mysore -->
+        <div class="tp-pkg-card reveal" data-category="1day"
+          data-package="Bangalore to Mysore Cab Service"
+          data-price="6799"
+          data-days="1"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Mysore%20Cab%20Service"
+          data-img="assets/images/mysore.jpg">
+          <div class="tp-pkg-img-wrap">
+            <img src="assets/images/mysore.jpg"
+              alt="Bangalore to Mysore tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Mysore Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.6799/-</span>
+              <span><i class="fa-solid fa-clock"></i> 1 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="bangalore-to-mysore-cab-service.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Mysore%20Cab%20Service"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Early Morning Nandi Hills -->
+        <div class="tp-pkg-card reveal" data-category="1day"
+          data-package="Early Morning Nandi Hills Tour Package"
+          data-price="3499"
+          data-days="1"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Early%20Morning%20Nandi%20Hills%20Tour%20Package"
+          data-img="assets/images/nandi-hills.jpg">
+          <div class="tp-pkg-img-wrap">
+            <img src="assets/images/nandi-hills.jpg"
+              alt="Nandi Hills tour package" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Early Morning Nandi Hills Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.3499/-</span>
+              <span><i class="fa-solid fa-clock"></i> 1 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="nandi-hills-tour-package.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Early%20Morning%20Nandi%20Hills%20Tour%20Package"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Bangalore to Hogenakkal -->
+        <div class="tp-pkg-card reveal" data-category="1day"
+          data-package="Bangalore To Hogenakkal Taxi Service. Bangalore To Hogenakkal One Day Tour Package"
+          data-price="6000"
+          data-days="1"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20To%20Hogenakkal%20One%20Day%20Tour%20Package"
+          data-img="assets/images/hogenakkal.jpg">
+          <div class="tp-pkg-img-wrap">
+            <img src="assets/images/hogenakkal.jpg"
+              alt="Bangalore to Hogenakkal tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore To Hogenakkal Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.6000/-</span>
+              <span><i class="fa-solid fa-clock"></i> 1 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="bangalore-to-hogenakkal.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20To%20Hogenakkal%20One%20Day%20Tour%20Package"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. One Day Bangalore Tour -->
+        <div class="tp-pkg-card reveal" data-category="1day"
+          data-package="One Day Bangalore Tour Package. One Day Bangalore Tour Cab Service"
+          data-price="3999"
+          data-days="1"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20One%20Day%20Bangalore%20Tour%20Package"
+          data-img="assets/images/bangalore.jpg">
+          <div class="tp-pkg-img-wrap">
+            <div class="tp-featured-tag">Popular</div>
+            <img src="assets/images/bangalore.jpg"
+              alt="One day Bangalore tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">One Day Bangalore Tour Package.</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.3999/-</span>
+              <span><i class="fa-solid fa-clock"></i> 1 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="one-day-bangalore-tour-package.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20One%20Day%20Bangalore%20Tour%20Package"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Bangalore to Mysore, Ooty, Coorg 7 Day -->
+        <div class="tp-pkg-card reveal" data-category="7day"
+          data-package="Bangalore to Mysore, Ooty, Coorg, Tour Package 6N/7D & Outstation Cab Service Bangalore"
+          data-price="30499"
+          data-days="7"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Mysore%20Ooty%20Coorg%20Tour%20Package%206N7D"
+          data-img="assets/images/bnglr-ooty.jpg">
+          <div class="tp-pkg-img-wrap">
+            <img src="assets/images/bnglr-ooty.jpg"
+              alt="Bangalore Mysore Ooty Coorg tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Mysore, Ooty, Coorg, Tour Package 6N/7D </h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.30499/-</span>
+              <span><i class="fa-solid fa-clock"></i> 7 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="bangalore-mysore-ooty-coorg-tour.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Mysore%20Ooty%20Coorg%20Tour%20Package%206N7D"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Bangalore to Coorg -->
+        <div class="tp-pkg-card reveal" data-category="3day"
+          data-package="Bangalore to Coorg Cab Service. Bangalore to Coorg Taxi Service"
+          data-price="13499"
+          data-days="3"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Coorg%20Cab%20Service"
+          data-img="assets/images/coorg.jpg">
+          <div class="tp-pkg-img-wrap">
+            <img src="assets/images/coorg.jpg"
+              alt="Bangalore to Coorg tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Coorg Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.13499/-</span>
+              <span><i class="fa-solid fa-clock"></i> 3 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="bangalore-to-coorg.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Coorg%20Cab%20Service"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Bangalore to Ooty -->
+        <div class="tp-pkg-card reveal" data-category="3day"
+          data-package="Bangalore to Ooty cab service. Bangalore to Ooty Taxi service"
+          data-price="12600"
+          data-days="3"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Ooty%20Cab%20Service"
+          data-img="assets/images/ooty.jpg">
+          <div class="tp-pkg-img-wrap">
+            
+            <img src="assets/images/ooty.jpg"
+              alt="Bangalore to Ooty tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Ooty Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.12600/-</span>
+              <span><i class="fa-solid fa-clock"></i> 3 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+              <a href="bangalore-to-ooty.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Ooty%20Cab%20Service"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Bangalore to Chikmagalur -->
+        <div class="tp-pkg-card reveal" data-category="3day"
+          data-package="Bangalore to Chikkamangaluru Cab Service"
+          data-price="12000"
+          data-days="3"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Chikmagalur%20Cab%20Service"
+          data-img="assets/images/chikkmagalur.jpg">
+          <div class="tp-pkg-img-wrap">
+            
+            <img src="assets/images/chikkamagalur.jpg"
+              alt="Bangalore to Chikmagalur tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Chikkamangaluru Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.12000/-</span>
+              <span><i class="fa-solid fa-clock"></i> 3 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+               <a href="bangalore-to-chikmagalur-cabs.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Chikmagalur%20Cab%20Service"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Bangalore to Wayanad -->
+        <div class="tp-pkg-card reveal" data-category="3day"
+          data-package="Bangalore to Wayanadu Cab Service"
+          data-price="13000"
+          data-days="3"
+          data-wa-text="Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Wayanad%20Cab%20Service"
+          data-img="assets/images/wayanad.jpg">
+          <div class="tp-pkg-img-wrap">
+            
+            <img src="assets/images/wayanad.jpg"
+              alt="Bangalore to Wayanad tour" />
+          </div>
+          <div class="tp-pkg-body">
+            <h3 class="tp-pkg-name">Bangalore to Wayanad Tour Package</h3>
+            <div class="tp-pkg-meta">
+              <span><i class="fa-solid fa-indian-rupee-sign"></i> Starts from Rs.13000/-</span>
+              <span><i class="fa-solid fa-clock"></i> 3 Day</span>
+            </div>
+            <div class="tp-pkg-actions">
+               <a href="bangalore-to-wayanad.html" class="tp-btn-explore">Explore</a>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20tour%20package%20-%20Bangalore%20to%20Wayanad%20Cab%20Service"
+                target="_blank" class="tp-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tp-packages-grid -->
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="at-why-strip tp-why-strip">
+    <div class="section-container">
+      <div class="at-why-grid">
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h4>Curated Destinations</h4>
+          <p>Handpicked popular routes covering South India's best getaways from Bangalore.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h4>Verified Drivers</h4>
+          <p>Experienced, police-verified drivers who know the routes and destinations well.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-tags"></i></div>
+          <h4>No Hidden Charges</h4>
+          <p>All-inclusive transparent pricing. Toll and parking charged at actuals only.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4>24/7 Support</h4>
+          <p>Round-the-clock assistance for every tour package and journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="section-container">
+        <div class="footer-cta reveal">
+          <h2>Ready for Your<br /><em>Next Adventure?</em></h2>
+          <div class="footer-cta-actions">
+            <a href="#tp-packages-section" class="btn-gold">Explore Packages</a>
+            <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20tour%20package" target="_blank"
+              class="btn-ghost-dark">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-body">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+            </a>
+            <p>Premium cab booking service in Bangalore for airport transfers, local trips, Tour Packages, and outstation travel.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="why-choose-us.html">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="airport-taxi.html">Airport Taxi</a></li>
+              <li><a href="local-cabs.html">Local Cabs</a></li>
+              <li><a href="outstation-cabs.html">Outstation Cabs</a></li>
+              <li><a href="tour-packages.html">Tour Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+919152333388">+91 9152333388</a></li>
+              <li><i class="fa-solid fa-envelope"></i> info@bengalurucarrentals.com</li>
+              <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20Tour%20Package" class="whatsapp-float"
+    target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+  
+  <script>
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

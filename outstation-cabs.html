@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outstation Cabs Bangalore | Bengaluru Car Rentals</title>
+  <meta name="description"
+    content="Book outstation cabs from Bangalore. One-way and round trip options. Clean cars, verified drivers, transparent per-km pricing." />
+  <meta name="keywords"
+    content="outstation cabs Bangalore, one way cab Bangalore, round trip cab Bangalore, Bengaluru outstation taxi" />
+  <link rel="canonical" href="https://www.bengalurucarrentals.com/outstation-cabs.html" />
+  <meta property="og:title" content="Outstation Cabs Bangalore | Bengaluru Car Rentals" />
+  <meta property="og:description"
+    content="Book outstation cabs from Bangalore. One-way and round trip options. Verified drivers, transparent pricing." />
+  <meta property="og:url" content="https://www.bengalurucarrentals.com/outstation-cabs.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+</head>
+
+<body class="outstation-cabs-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <div class="nav-item">
+          <a href="index.html#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <a href="index.html#booking" class="btn-gold">Book Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+919152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="oc-hero">
+    <div class="oc-hero-bg">
+      <img
+        src="assets/images/outstation.jpg"
+        alt="Outstation cab service Bangalore" class="oc-hero-img" />
+      <div class="oc-hero-overlay"></div>
+    </div>
+    <div class="oc-hero-content">
+      <nav class="at-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Outstation Cabs</span>
+      </nav>
+      <h1 class="oc-hero-title">Outstation Cabs Bangalore</h1>
+      <p class="oc-hero-sub">
+        One-way &amp; round trip outstation rides with per-km pricing.
+        Verified drivers, AC vehicles and no hidden charges — always.
+      </p>
+      <div class="oc-hero-badges">
+        <span><i class="fa-solid fa-road"></i> One Way &amp; Round Trip</span>
+        <span><i class="fa-solid fa-user-check"></i> Verified Drivers</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Safe &amp; Hygienic</span>
+        <span><i class="fa-solid fa-tags"></i> Per KM Pricing</span>
+      </div>
+      <div class="oc-hero-ctas">
+        <a href="index.html#booking" class="btn-gold">
+          <i class="fa-solid fa-road"></i>
+          <span>Book Outstation Cab</span>
+        </a>
+        <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20an%20Outstation%20Cab%20from%20Bangalore"
+          target="_blank" class="btn-ghost">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Info Strip -->
+  <div class="oc-pkg-strip">
+    <div class="section-container">
+      <div class="oc-pkg-grid">
+        <div class="oc-pkg-item">
+          <i class="fa-solid fa-route"></i>
+          <div>
+            <strong>300 Kms Min.</strong>
+            <span>Minimum per day billing</span>
+          </div>
+        </div>
+        <div class="oc-pkg-item">
+          <i class="fa-solid fa-moon"></i>
+          <div>
+            <strong>Driver Beta</strong>
+            <span>₹500/day allowance included</span>
+          </div>
+        </div>
+        <div class="oc-pkg-item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <div>
+            <strong>Per KM Billing</strong>
+            <span>Transparent, no hidden charges</span>
+          </div>
+        </div>
+        <div class="oc-pkg-item">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <strong>24/7 Support</strong>
+            <span>Round-the-clock assistance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trip Type Toggle -->
+  <div class="oc-trip-toggle-wrap">
+    <div class="section-container">
+      <div class="oc-trip-toggle reveal">
+        <button class="oc-trip-btn active" data-trip="oneway">
+          <i class="fa-solid fa-arrow-right"></i> One Way
+        </button>
+        <button class="oc-trip-btn" data-trip="roundtrip">
+          <i class="fa-solid fa-arrows-rotate"></i> Round Trip
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Car Listing -->
+  <section class="oc-cars-section" id="oc-cars-section">
+    <div class="section-container">
+      <div class="oc-cars-header reveal">
+        <p class="section-eyebrow">Select Your Cab</p>
+        <h2 class="section-heading">Outstation Cabs Bangalore, <em>Per KM Rates</em></h2>
+        <p class="oc-cars-desc">Choose from our fleet for your outstation journey. Rates shown are per km.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="oc-filter-row reveal">
+        <button class="oc-filter-btn active" data-filter="all">All Vehicles</button>
+        <button class="oc-filter-btn" data-filter="sedan">Sedan</button>
+        <button class="oc-filter-btn" data-filter="suv">SUV / MPV</button>
+        <button class="oc-filter-btn" data-filter="bus">Bus</button>
+      </div>
+
+      <div class="oc-cars-grid">
+
+        <!-- 1. Swift Dzire -->
+        <div class="oc-car-card reveal" data-category="sedan"
+          data-car="Swift Dzire"
+          data-seats="4+1"
+          data-luggage="4"
+          data-rate-oneway="12"
+          data-rate-roundtrip="11"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/swift.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/swift.jpg"
+              alt="Swift Dzire outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Swift Dzire</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 4+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 4 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 12.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 11.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select" aria-label="Book Swift Dzire">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Swift%20Dzire"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Toyota Etios -->
+        <div class="oc-car-card reveal" data-category="sedan"
+          data-car="Toyota Etios"
+          data-seats="4+1"
+          data-luggage="4"
+          data-rate-oneway="13"
+          data-rate-roundtrip="12"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/etios.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/etios.jpg"
+              alt="Toyota Etios outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Toyota Etios</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 4+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 4 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 13.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 12.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Toyota%20Etios"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Maruti Ciaz -->
+        <div class="oc-car-card reveal" data-category="sedan"
+          data-car="Maruti Ciaz"
+          data-seats="4+1"
+          data-luggage="4"
+          data-rate-oneway="15"
+          data-rate-roundtrip="14"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/ciaz.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/ciaz.jpg"
+              alt="Maruti Ciaz outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Maruti Ciaz</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 4+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 4 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 15.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 14.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Maruti%20Ciaz"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Maruti Ertiga -->
+        <div class="oc-car-card reveal" data-category="suv"
+          data-car="Maruti Ertiga"
+          data-seats="6+1"
+          data-luggage="4"
+          data-rate-oneway="16"
+          data-rate-roundtrip="15"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/ertiga.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/ertiga.jpg"
+              alt="Maruti Ertiga outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Maruti Ertiga</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 6+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 4 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 16.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 15.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Maruti%20Ertiga"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Kia Carens -->
+        <div class="oc-car-card reveal" data-category="suv"
+          data-car="Kia Carens"
+          data-seats="6+1"
+          data-luggage="5"
+          data-rate-oneway="16"
+          data-rate-roundtrip="15"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/caren.jpg">
+          <div class="oc-car-img-wrap">
+            <div class="oc-featured-tag">Popular</div>
+            <img src="assets/images/caren.jpg"
+              alt="Kia Carens outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Kia Carens</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 6+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 5 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★★</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 16.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 15.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select oc-btn-popular">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Kia%20Carens"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Toyota Innova -->
+        <div class="oc-car-card reveal" data-category="suv"
+          data-car="Toyota Innova"
+          data-seats="7+1"
+          data-luggage="5"
+          data-rate-oneway="17"
+          data-rate-roundtrip="16"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/innovas.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/innovas.jpg"
+              alt="Toyota Innova outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Toyota Innova</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 7+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 5 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 17.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 16.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Toyota%20Innova"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Innova Crysta -->
+        <div class="oc-car-card reveal" data-category="suv"
+          data-car="Innova Crysta"
+          data-seats="7+1"
+          data-luggage="5"
+          data-rate-oneway="18"
+          data-rate-roundtrip="17"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/crysta.jpg">
+          <div class="oc-car-img-wrap">
+            <div class="oc-featured-tag">Premium</div>
+            <img src="assets/images/crysta.jpg"
+              alt="Innova Crysta outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Innova Crysta</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 7+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 5 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★★</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 18.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 17.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Innova%20Crysta"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Innova Hycross -->
+        <div class="oc-car-card reveal" data-category="suv"
+          data-car="Innova Hycross"
+          data-seats="7+1"
+          data-luggage="4"
+          data-rate-oneway="22"
+          data-rate-roundtrip="21"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/hycros.jpg">
+          <div class="oc-car-img-wrap">
+            <div class="oc-featured-tag">Luxury</div>
+            <img src="assets/images/hycros.jpg"
+              alt="Innova Hycross outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Innova Hycross</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 7+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 4 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★★</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 22.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 21.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Innova%20Hycross"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Tempo Traveller -->
+        <div class="oc-car-card reveal" data-category="bus"
+          data-car="Tempo Traveller (A/C)"
+          data-seats="12+1"
+          data-luggage="12"
+          data-rate-oneway="25"
+          data-rate-roundtrip="23"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/tempo.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/tempo.jpg"
+              alt="Tempo Traveller AC outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Tempo Traveller (A/C)</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 12+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 12 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 25.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 23.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Tempo%20Traveller%20(A%2FC)"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Mini Bus -->
+        <div class="oc-car-card reveal" data-category="bus"
+          data-car="Mini Bus (A/C)"
+          data-seats="21+"
+          data-luggage="21"
+          data-rate-oneway="35"
+          data-rate-roundtrip="32"
+          data-driver-bata="500"
+          data-min-km="300"
+          data-img="assets/images/minibus.jpg">
+          <div class="oc-car-img-wrap">
+            <img src="assets/images/minibus.jpg"
+              alt="Mini Bus AC outstation cab Bangalore" />
+          </div>
+          <div class="oc-car-body">
+            <h3 class="oc-car-name">Mini Bus (A/C)</h3>
+            <div class="oc-car-pkg">300 Kms minimum rental per day</div>
+            <div class="oc-car-extra">Driver Bata ₹500/day</div>
+            <div class="oc-car-meta">
+              <span><i class="fa-solid fa-users"></i> 21+1 People</span>
+              <span><i class="fa-solid fa-suitcase"></i> 21 luggage</span>
+            </div>
+            <div class="oc-car-stars">★★★★☆</div>
+            <div class="oc-car-price-wrap">
+              <div class="oc-car-price oc-price-oneway">Rs. 35.00/km</div>
+              <div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. 32.00/km</div>
+            </div>
+            <div class="oc-car-actions">
+              <button class="oc-btn-select">Book Now</button>
+              <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Cab%20-%20Mini%20Bus%20(A%2FC)"
+                target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /oc-cars-grid -->
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="at-why-strip oc-why-strip">
+    <div class="section-container">
+      <div class="at-why-grid">
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-road"></i></div>
+          <h4>One Way Option</h4>
+          <p>Pay only for the distance travelled — no return fare on one-way trips.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <h4>Round Trip Savings</h4>
+          <p>Save more on round trips with our discounted per-km round trip rates.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-tags"></i></div>
+          <h4>No Hidden Charges</h4>
+          <p>Transparent per-km billing. Toll, parking charged at actuals only.</p>
+        </div>
+        <div class="at-why-item reveal">
+          <div class="at-why-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4>24/7 Support</h4>
+          <p>Round-the-clock assistance for every outstation journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="section-container">
+        <div class="footer-cta reveal">
+          <h2>Ready for Your<br /><em>Next Ride?</em></h2>
+          <div class="footer-cta-actions">
+            <a href="index.html#booking" class="btn-gold">Book Now</a>
+            <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20an%20outstation%20cab" target="_blank"
+              class="btn-ghost-dark">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-body">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+            </a>
+            <p>Premium cab booking service in Bangalore for airport transfers, local trips, Tour Packages, and outstation travel.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="why-choose-us.html">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="airport-taxi.html">Airport Taxi</a></li>
+              <li><a href="local-cabs.html">Local Cabs</a></li>
+              <li><a href="outstation-cabs.html">Outstation Cabs</a></li>
+              <li><a href="tour-packages.html">Tour Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+919152333388">+91 9152333388</a></li>
+              <li><i class="fa-solid fa-envelope"></i> info@bengalurucarrentals.com</li>
+              <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20an%20Outstation%20Cab" class="whatsapp-float"
+    target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+ 
+  <script>
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Outstation Cab | Bengaluru Car Rentals</title>
+  <meta name="description" content="Complete your outstation cab booking with Bengaluru Car Rentals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="booking-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <div class="nav-item">
+          <a href="index.html#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+919152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- Hero Bar -->
+  <section class="bk-hero">
+    <div class="bk-hero-bg">
+      <img src="assets/images/outstation.jpg"
+        alt="Book outstation cab Bangalore" class="bk-hero-img" />
+      <div class="bk-hero-overlay"></div>
+    </div>
+    <div class="bk-hero-content">
+      <nav class="at-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="outstation-cabs.html">Outstation Cabs</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Book Now</span>
+      </nav>
+      <h1 class="bk-hero-title">Complete Your <em>Booking</em></h1>
+      <p class="bk-hero-sub">You're one step away from a comfortable, verified outstation ride.</p>
+    </div>
+  </section>
+
+  <!-- Main Booking Area -->
+  <section class="bk-section">
+    <div class="section-container">
+      <div class="bk-grid">
+
+        <!-- Selected Car Panel -->
+        <aside class="bk-car-panel" id="bkCarPanel">
+          <div class="bk-car-img-wrap">
+            <img id="bkCarImg" src="" alt="Selected cab" />
+          </div>
+          <div class="bk-car-info">
+            <div class="bk-car-tag">Selected Vehicle</div>
+            <h2 id="bkCarName">—</h2>
+            <div class="bk-car-meta">
+              <span id="bkCarSeats"><i class="fa-solid fa-users"></i> —</span>
+              <span id="bkCarLuggage"><i class="fa-solid fa-suitcase"></i> —</span>
+            </div>
+            <div class="bk-car-stars">★★★★★</div>
+            <div class="bk-car-price" id="bkCarPrice">—</div>
+            <div class="bk-car-toll" id="bkTripType">—</div>
+            <div class="bk-car-toll" id="bkCarPackage">300 Kms minimum rental per day</div>
+            <div class="bk-car-toll" id="bkCarExtra">Driver Bata ₹500/day</div>
+            <a href="outstation-cabs.html" class="bk-change-car">
+              <i class="fa-solid fa-arrow-left"></i> Change Vehicle
+            </a>
+          </div>
+        </aside>
+
+        <!-- Form -->
+        <div class="bk-form-wrap">
+          <form id="bkForm" novalidate>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkName">Full Name <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkName" placeholder="Your full name" />
+                <small class="at-error" id="err-bkName"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkPhone">Mobile Number <span class="at-required">*</span></label>
+                <input class="at-form-input" type="tel" id="bkPhone" maxlength="10" placeholder="10-digit number" />
+                <small class="at-error" id="err-bkPhone"></small>
+              </div>
+            </div>
+
+            <div class="at-form-group">
+              <label class="at-form-label" for="bkEmail">Email Address <span class="at-required">*</span></label>
+              <input class="at-form-input" type="email" id="bkEmail" placeholder="your@email.com" />
+              <small class="at-error" id="err-bkEmail"></small>
+            </div>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkPickup">Pickup City / Address <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkPickup" placeholder="e.g. Bangalore" />
+                <small class="at-error" id="err-bkPickup"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkDrop">Destination City / Address <span class="at-required">*</span></label>
+                <input class="at-form-input" type="text" id="bkDrop" placeholder="e.g. Mysore" />
+                <small class="at-error" id="err-bkDrop"></small>
+              </div>
+            </div>
+
+            <div class="at-form-group">
+              <label class="at-form-label" for="bkLandmark">Nearest Landmark / Pickup Point</label>
+              <input class="at-form-input" type="text" id="bkLandmark" placeholder="Optional" />
+            </div>
+
+            <div class="at-form-row">
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkDate">Travel Date <span class="at-required">*</span></label>
+                <input class="at-form-input" type="date" id="bkDate" />
+                <small class="at-error" id="err-bkDate"></small>
+              </div>
+              <div class="at-form-group">
+                <label class="at-form-label" for="bkTime">Pickup Time <span class="at-required">*</span></label>
+                <input class="at-form-input" type="time" id="bkTime" />
+                <small class="at-error" id="err-bkTime"></small>
+              </div>
+            </div>
+
+            <!-- Return date shown only for round trips -->
+            <div class="at-form-group" id="bkReturnWrap" style="display:none;">
+              <label class="at-form-label" for="bkReturnDate">Return Date <span class="at-required">*</span></label>
+              <input class="at-form-input" type="date" id="bkReturnDate" placeholder="Return date" />
+              <small class="at-error" id="err-bkReturnDate"></small>
+            </div>
+
+            <div class="at-form-group">
+              <label class="at-form-label" for="bkNotes">Special Instructions</label>
+              <input class="at-form-input" type="text" id="bkNotes" placeholder="Any special requests (optional)" />
+            </div>
+
+            <button type="submit" class="at-btn-submit">
+              <i class="fa-solid fa-road"></i>
+              <span>Confirm Booking</span>
+            </button>
+          </form>
+
+          <!-- Success -->
+          <div class="at-form-success" id="bkSuccess" style="display:none;">
+            <div class="at-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Booking Submitted!</h3>
+            <p>Your outstation cab booking has been submitted successfully. Our team will contact you shortly.</p>
+            <a href="#" class="at-btn-wa-booking" id="bkWaBtn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Send Booking on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="section-container">
+        <div class="footer-cta">
+          <h2>Need Help? <em>Call Us</em></h2>
+          <div class="footer-cta-actions">
+            <a href="tel:+919152333388" class="btn-gold"><i class="fa-solid fa-phone"></i> +91 9152333388</a>
+            <a href="https://wa.me/919152333388" target="_blank" class="btn-ghost-dark">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    /* ── Populate car panel from URL params ── */
+    (function () {
+      var params    = new URLSearchParams(window.location.search);
+      var car       = params.get('car')       || 'No car selected';
+      var seats     = params.get('seats')     || '—';
+      var luggage   = params.get('luggage')   || '—';
+      var rateOW    = params.get('rateOW')    || '—';
+      var rateRT    = params.get('rateRT')    || '—';
+      var tripType  = params.get('tripType')  || 'oneway';
+      var img       = params.get('img')       || '';
+
+      var rate  = tripType === 'roundtrip' ? rateRT : rateOW;
+      var label = tripType === 'roundtrip' ? 'Round Trip' : 'One Way';
+
+      document.getElementById('bkCarName').textContent = car;
+      document.getElementById('bkCarSeats').innerHTML =
+        '<i class="fa-solid fa-users"></i> ' + seats + ' People';
+      document.getElementById('bkCarLuggage').innerHTML =
+        '<i class="fa-solid fa-suitcase"></i> ' + luggage + ' Luggage';
+      document.getElementById('bkCarPrice').textContent = 'Rs. ' + rate + '/km';
+      document.getElementById('bkTripType').textContent = 'Trip Type: ' + label;
+
+      if (img) {
+        document.getElementById('bkCarImg').src = img;
+        document.getElementById('bkCarImg').alt = car;
+      }
+
+      /* Show return date field for round trips */
+      if (tripType === 'roundtrip') {
+        document.getElementById('bkReturnWrap').style.display = 'block';
+      }
+    })();
+
+    /* ── Form validation & submission ── */
+    (function () {
+      var form    = document.getElementById('bkForm');
+      var success = document.getElementById('bkSuccess');
+      var waBtn   = document.getElementById('bkWaBtn');
+
+      function setError(id, msg) {
+        var el  = document.getElementById('err-' + id);
+        var inp = document.getElementById(id);
+        if (el)  el.textContent = msg;
+        if (inp) inp.classList.add('at-input-error');
+      }
+      function clearError(id) {
+        var el  = document.getElementById('err-' + id);
+        var inp = document.getElementById(id);
+        if (el)  el.textContent = '';
+        if (inp) inp.classList.remove('at-input-error');
+      }
+
+      var fields = ['bkName','bkPhone','bkEmail','bkPickup','bkDrop','bkDate','bkTime'];
+      fields.forEach(function(id) {
+        var inp = document.getElementById(id);
+        if (inp) inp.addEventListener('input', function(){ clearError(id); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var params   = new URLSearchParams(window.location.search);
+        var tripType = params.get('tripType') || 'oneway';
+
+        var messages = {
+          bkName:   'Full name is required',
+          bkPhone:  'Mobile number is required',
+          bkEmail:  'Email address is required',
+          bkPickup: 'Pickup city is required',
+          bkDrop:   'Destination city is required',
+          bkDate:   'Please select a travel date',
+          bkTime:   'Please select a pickup time'
+        };
+
+        var valid = true;
+        fields.forEach(function(id) {
+          var inp = document.getElementById(id);
+          if (!inp || !inp.value.trim()) {
+            setError(id, messages[id]);
+            valid = false;
+          }
+        });
+
+        /* Validate return date for round trips */
+        if (tripType === 'roundtrip') {
+          var ret = document.getElementById('bkReturnDate');
+          if (!ret || !ret.value.trim()) {
+            setError('bkReturnDate', 'Return date is required');
+            valid = false;
+          }
+        }
+
+        if (!valid) return;
+
+        /* Build WhatsApp message */
+        var car      = params.get('car')      || '—';
+        var rateOW   = params.get('rateOW')   || '—';
+        var rateRT   = params.get('rateRT')   || '—';
+        var rate     = tripType === 'roundtrip' ? rateRT : rateOW;
+        var tripLabel= tripType === 'roundtrip' ? 'Round Trip' : 'One Way';
+
+        var retDateLine = '';
+        if (tripType === 'roundtrip') {
+          retDateLine = '\nReturn Date: ' + document.getElementById('bkReturnDate').value;
+        }
+
+        var waText = encodeURIComponent(
+          'Hi, I want to book an Outstation Cab!\n\n' +
+          'Vehicle: ' + car + '\n' +
+          'Trip Type: ' + tripLabel + '\n' +
+          'Rate: Rs. ' + rate + '/km\n' +
+          'Min: 300 Kms/day | Driver Bata ₹500/day\n' +
+          'Name: ' + document.getElementById('bkName').value + '\n' +
+          'Phone: ' + document.getElementById('bkPhone').value + '\n' +
+          'Email: ' + document.getElementById('bkEmail').value + '\n' +
+          'Pickup: ' + document.getElementById('bkPickup').value + '\n' +
+          'Destination: ' + document.getElementById('bkDrop').value + '\n' +
+          'Date: ' + document.getElementById('bkDate').value +
+          retDateLine + '\n' +
+          'Time: ' + document.getElementById('bkTime').value
+        );
+        waBtn.href = 'https://wa.me/919152333388?text=' + waText;
+
+        form.style.display = 'none';
+        success.style.display = 'block';
+      });
+    })();
+
+    /* Mobile menu */
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

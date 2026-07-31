@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bookings Dashboard | Bengaluru Car Rentals</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #0f1115; color: #e5e7eb;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; border-bottom: 1px solid #262b36; background: #171a21;
+  }
+  header h1 { font-size: 1.15rem; margin: 0; color: #f4c542; }
+  header button {
+    background: transparent; border: 1px solid #3a4152; color: #cfd3da; padding: 8px 16px;
+    border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+  }
+  header button:hover { border-color: #f4c542; color: #f4c542; }
+  main { padding: 24px 28px; }
+  .meta { color: #9aa1ac; font-size: 0.85rem; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid #232833; text-align: left; white-space: nowrap; }
+  th { color: #f4c542; font-weight: 600; position: sticky; top: 0; background: #0f1115; }
+  tr:hover td { background: #171a21; }
+  .empty { padding: 60px 0; text-align: center; color: #9aa1ac; }
+  .table-wrap { overflow-x: auto; border: 1px solid #232833; border-radius: 10px; }
+  .badge { padding: 3px 9px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: capitalize; }
+  .badge.airport { background: #1e3a5f; color: #7cc4ff; }
+  .badge.local { background: #234b32; color: #7be0a0; }
+  .badge.outstation { background: #4a2f5c; color: #d6a8ff; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Bookings Dashboard</h1>
+    <button id="logoutBtn">Log Out</button>
+  </header>
+  <main>
+    <div class="meta" id="metaLine">Loading bookings...</div>
+    <div class="table-wrap">
+      <table id="bookingsTable" style="display:none;">
+        <thead>
+          <tr>
+            <th>#</th><th>Type</th><th>Car</th><th>Trip</th><th>Name</th><th>Phone</th>
+            <th>Email</th><th>Pickup</th><th>Drop</th><th>Date</th><th>Time</th>
+            <th>Return Date</th><th>Notes</th><th>Received</th>
+          </tr>
+        </thead>
+        <tbody id="bookingsBody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="emptyState" style="display:none;">No bookings yet.</div>
+  </main>
+
+  <script>
+    async function loadBookings() {
+      const meta = document.getElementById('metaLine');
+      try {
+        const res = await fetch('/api/bookings', { credentials: 'include' });
+        if (res.status === 401) {
+          window.location.href = 'admin-login.html';
+          return;
+        }
+        const data = await res.json();
+        if (!data.ok) {
+          meta.textContent = data.error || 'Failed to load bookings.';
+          return;
+        }
+        if (data.warning) {
+          meta.textContent = data.warning;
+        } else {
+          meta.textContent = `${data.bookings.length} booking(s) total.`;
+        }
+
+        if (!data.bookings.length) {
+          document.getElementById('emptyState').style.display = 'block';
+          return;
+        }
+
+        const tbody = document.getElementById('bookingsBody');
+        data.bookings.forEach(function (b, i) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${i + 1}</td>
+            <td><span class="badge ${b.page_type || ''}">${b.page_type || '—'}</span></td>
+            <td>${b.car || '—'}</td>
+            <td>${b.trip_option || '—'}</td>
+            <td>${b.name || '—'}</td>
+            <td>${b.phone || '—'}</td>
+            <td>${b.email || '—'}</td>
+            <td>${b.pickup || '—'}</td>
+            <td>${b.drop_location || '—'}</td>
+            <td>${b.travel_date || '—'}</td>
+            <td>${b.travel_time || '—'}</td>
+            <td>${b.return_date || '—'}</td>
+            <td>${b.notes || '—'}</td>
+            <td>${b.created_at ? new Date(b.created_at).toLocaleString() : '—'}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+        document.getElementById('bookingsTable').style.display = 'table';
+      } catch (err) {
+        meta.textContent = 'Something went wrong loading bookings.';
+      }
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', async function () {
+      await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+      window.location.href = 'admin-login.html';
+    });
+
+    loadBookings();
+  </script>
+</body>
+</html>

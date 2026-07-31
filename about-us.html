@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Bengaluru Car Rentals — Trusted Cab Service in Bangalore Since 2010</title>
+  <meta name="description"
+    content="Learn about Bengaluru Car Rentals — Bangalore's trusted cab service provider since 2010. Over 50,000+ happy customers, verified drivers, 24/7 support for airport transfers, outstation trips, local cabs and South India tour packages." />
+  <meta name="keywords"
+    content="about Bengaluru Car Rentals, car rental company Bangalore, trusted cab service Bangalore, Bangalore cab company, reliable taxi service Bangalore, cab service about us" />
+  <link rel="canonical" href="https://www.bengalurucarrentals.com/about-us.html" />
+  <meta property="og:title" content="About Us | Bengaluru Car Rentals — Trusted Cab Service Bangalore" />
+  <meta property="og:description" content="Bengaluru Car Rentals — 15+ years of trusted cab service in Bangalore. Airport transfers, outstation cabs, local hire and South India tour packages." />
+  <meta property="og:url" content="https://www.bengalurucarrentals.com/about-us.html" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Bengaluru Car Rentals",
+    "description": "Bengaluru Car Rentals is a premium cab and car rental service in Bangalore offering airport transfers, outstation cabs, local hire and South India tour packages.",
+    "url": "https://www.bengalurucarrentals.com",
+    "telephone": "+919152333388",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "foundingDate": "2010",
+    "areaServed": "Bangalore, Karnataka, South India",
+    "serviceType": ["Airport Taxi", "Outstation Cab Service", "Local Car Rental", "Tour Packages"],
+    "sameAs": [
+      "https://www.facebook.com/jkcarrentals",
+      "https://twitter.com/jk_cars"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  
+</head>
+
+<body class="about-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">BCR</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+      </a>
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="nav-link"><span>Home</span></a>
+        <div class="nav-item">
+          <a href="index.html#services" class="nav-link">
+            <span>Services</span>
+            <i class="fa-solid fa-chevron-down caret"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+            <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+            <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+            <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+          </div>
+        </div>
+        <a href="about-us.html" class="nav-link"><span>About Us</span></a>
+        <a href="why-choose-us.html" class="nav-link"><span>Why Choose Us</span></a>       
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+919152333388" class="phone-link">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>+91 9152333388</span>
+        </a>
+        <a href="index.html#booking" class="btn-gold">Book Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <div>
+        <div class="mobile-link mobile-services-toggle" id="mobileServicesToggle">
+          Services <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;margin-left:6px;"></i>
+        </div>
+        <div class="mobile-dropdown" id="mobileDropdown">
+          <a href="airport-taxi.html"><i class="fa-solid fa-plane-arrival"></i> Airport Taxi</a>
+          <a href="local-cabs.html"><i class="fa-solid fa-city"></i> Local Cabs</a>
+          <a href="outstation-cabs.html"><i class="fa-solid fa-road"></i> Outstation Cabs</a>
+          <a href="tour-packages.html"><i class="fa-solid fa-map-location-dot"></i> Tour Packages</a>
+        </div>
+      </div>
+      <a href="about-us.html" class="mobile-link">About Us</a>
+      <a href="why-choose-us.html" class="mobile-link">Why Choose Us</a>     
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="tel:+919152333388" class="mobile-link">+91 9152333388</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="au-hero">
+    <div class="au-hero-bg">
+      <img src="assets/images/about.jpg"
+        alt="Bengaluru Car Rentals - Premium cab service in Bangalore" class="au-hero-img" />
+      <div class="au-hero-overlay"></div>
+    </div>
+    <div class="section-container">
+      <div class="au-hero-content">
+        <nav class="at-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>About Us</span>
+        </nav>
+        <p class="au-hero-eyebrow"><span class="tag-dot"></span> India's Trusted Taxi Booking Partner</p>
+        <h1 class="au-hero-title">Moving Bengaluru,<br /><em>One Journey at a Time</em></h1>
+        <p class="au-hero-sub">For over 15 years, Bengaluru Car Rentals has been the city's most trusted chauffeur-driven cab service — connecting passengers to airports, destinations, hill stations and everything in between with professionalism, comfort and care.</p>
+        <div class="au-hero-ctas">
+          <a href="tel:+919152333388" class="btn-gold">
+            <i class="fa-solid fa-phone-volume"></i> Call Us Now
+          </a>
+          <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20cab" target="_blank" class="btn-ghost">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       STATS COUNTER STRIP
+  ══════════════════════════════════════════ -->
+  <div class="au-stats-strip">
+    <div class="section-container">
+      <div class="au-stats-grid">
+        <div class="au-stat reveal">
+          <span class="au-stat-num" data-target="15">0</span><span class="au-stat-suffix">+</span>
+          <span class="au-stat-label">Years of Service</span>
+        </div>
+        <div class="au-stat-div"></div>
+        <div class="au-stat reveal">
+          <span class="au-stat-num" data-target="50000">0</span><span class="au-stat-suffix">+</span>
+          <span class="au-stat-label">Happy Customers</span>
+        </div>
+        <div class="au-stat-div"></div>
+        <div class="au-stat reveal">
+          <span class="au-stat-num" data-target="200">0</span><span class="au-stat-suffix">+</span>
+          <span class="au-stat-label">Verified Drivers</span>
+        </div>
+        <div class="au-stat-div"></div>
+        <div class="au-stat reveal">
+          <span class="au-stat-num" data-target="20">0</span><span class="au-stat-suffix">+</span>
+          <span class="au-stat-label">Destinations Covered</span>
+        </div>
+        <div class="au-stat-div"></div>
+        <div class="au-stat reveal">
+          <span class="au-stat-num" data-target="100">0</span><span class="au-stat-suffix">+</span>
+          <span class="au-stat-label">Vehicles in Fleet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       OUR STORY
+  ══════════════════════════════════════════ -->
+  <section class="au-story section">
+    <div class="section-container">
+      <div class="au-story-grid">
+        <div class="au-story-img-col reveal">
+          <div class="au-story-img-wrap">
+            <img src="assets/images/etios.jpg"
+              alt="Bengaluru Car Rentals driver and vehicle" />
+            <div class="au-story-img-badge">
+              <span class="au-badge-num">15+</span>
+              <span class="au-badge-text">Years of Trust</span>
+            </div>
+          </div>
+          <!-- floating card -->
+          <div class="au-story-float-card reveal">
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <strong>Bangalore's Trusted Choice</strong>
+              <span>Rated 4.8 ★ by 50,000+ customers across Google &amp; WhatsApp reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="au-story-text-col reveal">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-heading">Finally, a Car Rental That Understands<br /><em>Your Journey</em></h2>
+          <p class="au-story-lead">We didn't set out to build just another cab company. We set out to change the way Bangalore travels.</p>
+          <p class="au-story-body">Bengaluru Car Rentals was founded with a single, clear belief — that every passenger deserves a ride that is safe, comfortable, transparent and stress-free. From the very first booking, we committed ourselves to chauffeur-driven excellence: no app-based unknown drivers, no hidden charges, no anxious waiting. Just a professional driver, a clean AC vehicle and a journey you can trust.</p>
+          <p class="au-story-body">Over the years, we have grown from a small fleet of sedans serving Bangalore Airport to a comprehensive travel partner operating across Karnataka and South India — covering airport transfers, 24-hour local hire, outstation trips across 20+ destinations, and curated tour packages to Mysore, Ooty, Coorg, Hogenakkal and beyond.</p>
+          <p class="au-story-body">Our core team has taken it upon itself to build a brand that Bangalore is proud of — one that earns customer loyalty not through discounts and gimmicks, but through consistently exceptional service, transparent pricing and the simple promise: <strong>we will get you there, safely.</strong></p>
+          <div class="au-story-cta">
+            <a href="index.html#booking" class="btn-gold">Book a Ride</a>
+            <a href="tel:+919152333388" class="au-call-link">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>+91 9152333388</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       MISSION & VISION
+  ══════════════════════════════════════════ -->
+  <section class="au-mission section">
+    <div class="section-container">
+      <div class="au-mv-grid">
+        <div class="au-mv-card reveal">
+          <div class="au-mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <p>To deliver chauffeur-driven cab services that combine safety, comfort and transparency — making every journey across Bangalore and South India a seamless, worry-free experience for every passenger, every time.</p>
+        </div>
+        <div class="au-mv-card reveal">
+          <div class="au-mv-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <p>To transform the perception of car rental in Bangalore — from an uncertain experience to a brand synonymous with trust, reliability and value. We envision a city where every traveller moves fearlessly, anywhere, anytime.</p>
+        </div>
+        <div class="au-mv-card reveal">
+          <div class="au-mv-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Our Promise</h3>
+          <p>No hidden charges. No unknown drivers. No last-minute cancellations. Just verified professionals, well-maintained vehicles and 24/7 support — a promise backed by 15 years of trusted service in Bangalore.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       OUR JOURNEY / TIMELINE
+  ══════════════════════════════════════════ -->
+  <section class="au-timeline-section section">
+    <div class="section-container">
+      <div class="au-timeline-header reveal" style="text-align:center; margin-bottom:64px;">
+        <p class="section-eyebrow">Our Journey</p>
+        <h2 class="section-heading">15 Years of <em>Moving Bangalore</em></h2>
+        <p class="au-tl-sub">From a small fleet to a South India travel partner — here's how we got here.</p>
+      </div>
+      <div class="au-timeline">
+
+        <div class="au-tl-item au-tl-left reveal">
+          <div class="au-tl-dot"><i class="fa-solid fa-flag"></i></div>
+          <div class="au-tl-card">
+            <span class="au-tl-year">2010</span>
+            <h4>Bengaluru Car Rentals is Founded</h4>
+            <p>Started with 5 vehicles and a simple commitment — provide Bangalore's travellers with reliable, chauffeur-driven cabs for airport transfers and local hire. The first booking was an airport run from Koramangala to KIAL.</p>
+          </div>
+        </div>
+
+        <div class="au-tl-item au-tl-right reveal">
+          <div class="au-tl-dot"><i class="fa-solid fa-car"></i></div>
+          <div class="au-tl-card">
+            <span class="au-tl-year">2013</span>
+            <h4>Fleet Expansion &amp; Outstation Launch</h4>
+            <p>Expanded to 30+ vehicles including Toyota Innova SUVs. Launched outstation cab services to Mysore, Coorg and Ooty — becoming one of the first dedicated outstation taxi operators in South Bangalore.</p>
+          </div>
+        </div>
+
+        <div class="au-tl-item au-tl-left reveal">
+          <div class="au-tl-dot"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div class="au-tl-card">
+            <span class="au-tl-year">2016</span>
+            <h4>Tour Packages &amp; Pan-Karnataka Coverage</h4>
+            <p>Launched curated tour packages to Hogenakkal, Chikmagalur, Wayanad, Tirupati and Goa. Grew coverage to 20+ destinations across Karnataka, Tamil Nadu and Kerala.</p>
+          </div>
+        </div>
+
+        <div class="au-tl-item au-tl-right reveal">
+          <div class="au-tl-dot"><i class="fa-solid fa-star"></i></div>
+          <div class="au-tl-card">
+            <span class="au-tl-year">2019</span>
+            <h4>10,000+ Customers &amp; Premium Fleet</h4>
+            <p>Crossed the milestone of 10,000 happy customers. Added Innova Crysta and New Innova Crysta to the fleet. Introduced Tempo Traveller services for large group travel.</p>
+          </div>
+        </div>
+
+        <div class="au-tl-item au-tl-left reveal">
+          <div class="au-tl-dot"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="au-tl-card">
+            <span class="au-tl-year">2021</span>
+            <h4>Post-Pandemic Relaunch with Enhanced Safety</h4>
+            <p>Relaunched with enhanced sanitization protocols, GPS-tracked vehicles and strengthened 24/7 customer support. Introduced the WhatsApp booking channel that quickly became the preferred way for customers to book.</p>
+          </div>
+        </div>
+
+        <div class="au-tl-item au-tl-right reveal">
+          <div class="au-tl-dot au-tl-dot-gold"><i class="fa-solid fa-trophy"></i></div>
+          <div class="au-tl-card au-tl-card-gold">
+            <span class="au-tl-year">2025</span>
+            <h4>50,000+ Customers &amp; New Digital Experience</h4>
+            <p>Crossed 50,000 happy customers. Launched a fully redesigned website with online booking, detailed tour pages and transparent pricing — making it easier than ever for travellers to plan their journey with us.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERVICES OVERVIEW
+  ══════════════════════════════════════════ -->
+  <section class="au-services-section section">
+    <div class="section-container">
+      <div class="au-services-header reveal" style="text-align:center; margin-bottom:56px;">
+        <p class="section-eyebrow">What We Offer</p>
+        <h2 class="section-heading">Every Journey,<br /><em>Covered</em></h2>
+      </div>
+      <div class="au-services-grid">
+
+        <div class="au-svc-card reveal">
+          <div class="au-svc-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <span class="au-svc-num">01</span>
+          <h3>Airport Taxi</h3>
+          <p>Punctual airport transfers to and from KIAL (Kempegowda International Airport) — 24/7, flight-tracked, never a minute late. Available from every Bangalore neighbourhood.</p>
+          <a href="airport-taxi.html" class="au-svc-link">View Fares <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="au-svc-card reveal">
+          <div class="au-svc-icon"><i class="fa-solid fa-city"></i></div>
+          <span class="au-svc-num">02</span>
+          <h3>Local Cabs</h3>
+          <p>Half-day and full-day local hire across Bangalore city. Choose from 4-hour/40km to 12-hour/120km packages — perfect for shopping, meetings and city sightseeing.</p>
+          <a href="local-cabs.html" class="au-svc-link">View Packages <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="au-svc-card reveal">
+          <div class="au-svc-icon"><i class="fa-solid fa-road"></i></div>
+          <span class="au-svc-num">03</span>
+          <h3>Outstation Cabs</h3>
+          <p>One-way and round-trip outstation cabs to 20+ destinations — Mysore, Coorg, Ooty, Chikmagalur, Wayanad, Goa, Tirupati, Munnar and more. Per-km transparent pricing.</p>
+          <a href="outstation-cabs.html" class="au-svc-link">View Routes <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="au-svc-card reveal">
+          <div class="au-svc-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <span class="au-svc-num">04</span>
+          <h3>Tour Packages</h3>
+          <p>Curated 1-day to 7-day cab-inclusive tour packages — Bangalore city tour, Hogenakkal, Mysore, Ooty, Coorg, Nandi Hills, Mysore–Ooty–Coorg 6N/7D and more.</p>
+          <a href="tour-packages.html" class="au-svc-link">Explore Tours <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       WHY CHOOSE US
+  ══════════════════════════════════════════ -->
+  <section class="au-why-section section">
+    <div class="section-container">
+      <div class="au-why-grid">
+        <div class="au-why-text reveal">
+          <p class="section-eyebrow">Why Choose Us</p>
+          <h2 class="section-heading">The BCR Difference —<br /><em>Trust Built Over 15 Years</em></h2>
+          <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.75;margin-bottom:32px;">We don't promise the lowest price — we promise the best value. Every rupee you spend with us goes towards a safer, more comfortable and more reliable journey.</p>
+          <a href="index.html#booking" class="btn-gold">Book Your Next Ride</a>
+        </div>
+        <div class="au-why-list-col">
+          <div class="au-why-item reveal">
+            <div class="au-why-icon-box"><i class="fa-solid fa-user-shield"></i></div>
+            <div>
+              <h4>100% Verified Drivers</h4>
+              <p>Every driver undergoes police verification, background checks and vehicle safety inspection before joining our fleet. You know exactly who is driving you.</p>
+            </div>
+          </div>
+          <div class="au-why-item reveal">
+            <div class="au-why-icon-box"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <div>
+              <h4>No Hidden Charges</h4>
+              <p>Our pricing is fully transparent. The price quoted is the price you pay — vehicle, fuel, parking and toll all included. No surge pricing, no surprise add-ons.</p>
+            </div>
+          </div>
+          <div class="au-why-item reveal">
+            <div class="au-why-icon-box"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>24/7 Availability</h4>
+              <p>Round-the-clock service for early morning airport runs, late-night pickups and everything in between. Our support team is always just a call or WhatsApp away.</p>
+            </div>
+          </div>
+          <div class="au-why-item reveal">
+            <div class="au-why-icon-box"><i class="fa-solid fa-car-side"></i></div>
+            <div>
+              <h4>Well-Maintained Fleet</h4>
+              <p>From compact Swift Dzires to spacious New Innova Crystas — every vehicle is regularly serviced, clean, air-conditioned and maintained to the highest standards.</p>
+            </div>
+          </div>
+          <div class="au-why-item reveal">
+            <div class="au-why-icon-box"><i class="fa-solid fa-headset"></i></div>
+            <div>
+              <h4>Dedicated Support</h4>
+              <p>A real person answers your call. Our support team handles booking confirmations, route queries, last-minute changes and in-trip assistance — seven days a week.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FLEET OVERVIEW
+  ══════════════════════════════════════════ -->
+  <section class="au-fleet-section section">
+    <div class="section-container">
+      <div class="au-fleet-header reveal" style="text-align:center; margin-bottom:52px;">
+        <p class="section-eyebrow light">Our Fleet</p>
+        <h2 class="section-heading light">A Vehicle for <em>Every Journey</em></h2>
+        <p class="au-fleet-sub">From solo travellers to 12-seater group trips — our diverse fleet has the perfect vehicle for your journey.</p>
+      </div>
+      <div class="au-fleet-grid">
+        <div class="au-fleet-item reveal">
+          <div class="au-fleet-icon"><i class="fa-solid fa-car"></i></div>
+          <h4>Sedan</h4>
+          <p>Swift Dzire, Toyota Etios, Maruti Ciaz</p>
+          <span>4+1 Seater · A/C</span>
+        </div>
+        <div class="au-fleet-item reveal">
+          <div class="au-fleet-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <h4>MUV</h4>
+          <p>Maruti Ertiga</p>
+          <span>6+1 Seater · A/C</span>
+        </div>
+        <div class="au-fleet-item au-fleet-popular reveal">
+          <div class="au-fleet-popular-tag">Most Popular</div>
+          <div class="au-fleet-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <h4>SUV</h4>
+          <p>Toyota Innova, Innova Crysta, New Innova Crysta</p>
+          <span>7+1 Seater · A/C</span>
+        </div>
+        <div class="au-fleet-item reveal">
+          <div class="au-fleet-icon"><i class="fa-solid fa-bus"></i></div>
+          <h4>Tempo Traveller</h4>
+          <p>Force Tempo Traveller</p>
+          <span>12+1 Seater · A/C</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════ -->
+  <section class="au-faq-section section">
+    <div class="section-container">
+      <div class="au-faq-grid">
+        <div class="au-faq-left reveal">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 class="section-heading">Frequently Asked<br /><em>Questions</em></h2>
+          <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.75;margin:20px 0 32px;">Can't find your answer here? Call or WhatsApp us — our team is available 24/7.</p>
+          <a href="tel:+919152333388" class="btn-gold"><i class="fa-solid fa-phone-volume"></i> Call Us</a>
+        </div>
+        <div class="au-faq-right">
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>How do I book a cab with Bengaluru Car Rentals?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>You can book by calling us on <strong>+91 9152333388</strong>, messaging us on WhatsApp, or using the booking form on our website. We confirm every booking personally — no automated confirmations.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>Are there any hidden charges?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>No. Our pricing is fully transparent. The price quoted covers vehicle, fuel, parking and toll charges. For multi-day packages, night bata (driver overnight allowance) is communicated upfront — never added as a surprise at the end.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>Are your drivers verified and safe?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>Yes. Every driver on our platform is police-verified, holds a valid commercial driving licence and undergoes regular vehicle safety checks. We also track all our vehicles via GPS for your safety.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>Do you provide airport pickup service?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>Yes, we provide 24/7 airport pickup and drop services to and from Kempegowda International Airport (KIAL), Bangalore. We track your flight and adjust pickup time if your flight is delayed.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>What vehicles are available for outstation trips?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>We offer Swift Dzire, Toyota Etios, Maruti Ciaz (Sedan, 4+1), Maruti Ertiga (MUV, 6+1), Toyota Innova, Innova Crysta, New Innova Crysta (SUV, 7+1) and Force Tempo Traveller (12+1) for group travel.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>Can I get a cab for a multi-day outstation trip?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>Absolutely. We specialise in multi-day outstation cab packages — from a 1-day Mysore tour to a 7-day Mysore–Ooty–Coorg journey. Our driver stays with you throughout, handling all inter-city transfers on your itinerary.</p>
+            </div>
+          </div>
+          <div class="au-faq-item reveal" data-faq>
+            <button class="au-faq-q" aria-expanded="false">
+              <span>Is there a cancellation policy?</span>
+              <i class="fa-solid fa-chevron-down au-faq-icon"></i>
+            </button>
+            <div class="au-faq-a">
+              <p>Yes. Cancellations made more than 24 hours before the trip are fully refundable. For cancellations within 24 hours, a nominal charge may apply. Please contact us directly for specific cases — we always try to accommodate our customers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════════ -->
+  <section class="au-testimonials-section section">
+    <div class="section-container">
+      <div style="text-align:center; margin-bottom:52px;">
+        <p class="section-eyebrow light">Customer Reviews</p>
+        <h2 class="section-heading light">What Our Passengers<br /><em>Say About Us</em></h2>
+      </div>
+      <div class="au-reviews-grid">
+        <div class="au-review-card reveal">
+          <div class="au-review-stars">★★★★★</div>
+          <p>"Excellent service! Booked an Innova for a 3-day Mysore–Ooty trip. The driver was professional, punctual and knew every route perfectly. Pricing was exactly as quoted — zero surprises. Highly recommended!"</p>
+          <div class="au-review-author">
+            <div class="au-review-avatar">RK</div>
+            <div><strong>Rahul K.</strong><span>Bangalore · Mysore–Ooty Tour</span></div>
+          </div>
+        </div>
+        <div class="au-review-card reveal">
+          <div class="au-review-stars">★★★★★</div>
+          <p>"Used BCR for my KIAL airport pickup at 4 AM. The driver was waiting at the gate before I even came out. Clean Dzire, AC working perfectly, dropped home safely. Will always use them for airport transfers."</p>
+          <div class="au-review-author">
+            <div class="au-review-avatar">PS</div>
+            <div><strong>Priya S.</strong><span>Koramangala · Airport Transfer</span></div>
+          </div>
+        </div>
+        <div class="au-review-card reveal">
+          <div class="au-review-stars">★★★★★</div>
+          <p>"Booked the Hogenakkal day tour for our family. Comfortable Innova, driver was very helpful at the falls. The all-inclusive pricing made budgeting easy. Kids loved the trip — will book the Coorg package next!"</p>
+          <div class="au-review-author">
+            <div class="au-review-avatar">AM</div>
+            <div><strong>Anita M.</strong><span>Jayanagar · Hogenakkal Day Tour</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CTA STRIP
+  ══════════════════════════════════════════ -->
+  <div class="au-cta-strip">
+    <div class="section-container">
+      <div class="au-cta-inner reveal">
+        <div class="au-cta-text">
+          <h3>Ready to Travel with Bangalore's Most Trusted Cab Service?</h3>
+          <p>Call us, WhatsApp us or book online — we're here 24/7.</p>
+        </div>
+        <div class="au-cta-actions">
+          <a href="tel:+919152333388" class="btn-gold"><i class="fa-solid fa-phone-volume"></i> +91 9152333388</a>
+          <a href="https://wa.me/919152333388?text=Hi%2C%20I%20want%20to%20book%20a%20cab" target="_blank" class="au-cta-wa">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="contact">
+    <div class="footer-body">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <span class="logo-main">Bengaluru</span><span class="logo-accent">CarRentals</span>
+            </a>
+            <p>Premium cab booking service in Bangalore for airport transfers, local trips, tour packages and outstation travel across South India.</p>
+            <div class="social-links">
+              <a href="https://www.facebook.com/jkcarrentals" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://twitter.com/jk_cars" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://wa.me/919152333388" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="why-choose-us.html ">Why Choose Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="airport-taxi.html">Airport Taxi</a></li>
+              <li><a href="local-cabs.html">Local Cabs</a></li>
+              <li><a href="outstation-cabs.html">Outstation Cabs</a></li>
+              <li><a href="tour-packages.html">Tour Packages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+919152333388">+91 9152333388</a></li>
+              <li><i class="fa-solid fa-envelope"></i> info@bengalurucarrentals.com</li>
+              <li><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka, India</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="section-container">
+        <p>&copy; 2026 BengaluruCarRentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919152333388?text=Hi%20I%20want%20to%20book%20a%20cab" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="assets/js/script.js"></script>
+  
+  <script>
+    document.getElementById('mobileServicesToggle').addEventListener('click', function () {
+      document.getElementById('mobileDropdown').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
