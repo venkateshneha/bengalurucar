@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manage Vehicles | Bengaluru Car Rentals</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #0f1115; color: #e5e7eb;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; border-bottom: 1px solid #262b36; background: #171a21;
+    flex-wrap: wrap; gap: 12px;
+  }
+  header h1 { font-size: 1.15rem; margin: 0; color: #f4c542; }
+  nav { display: flex; gap: 8px; align-items: center; }
+  nav a, nav button {
+    background: transparent; border: 1px solid #3a4152; color: #cfd3da; padding: 8px 16px;
+    border-radius: 8px; cursor: pointer; font-size: 0.85rem; text-decoration: none; display: inline-block;
+  }
+  nav a.active { border-color: #f4c542; color: #f4c542; }
+  nav a:hover, nav button:hover { border-color: #f4c542; color: #f4c542; }
+  main { padding: 24px 28px; max-width: 1200px; margin: 0 auto; }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+  .meta { color: #9aa1ac; font-size: 0.85rem; }
+  .btn {
+    background: #f4c542; color: #10131a; border: none; padding: 10px 18px; border-radius: 8px;
+    font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  }
+  .btn.secondary { background: transparent; border: 1px solid #3a4152; color: #cfd3da; font-weight: 600; }
+  .btn.secondary:hover { border-color: #f4c542; color: #f4c542; }
+  .btn.danger { background: transparent; border: 1px solid #7f2d2d; color: #f87171; }
+  .btn.danger:hover { background: #7f2d2d; color: #fff; }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid #232833; border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid #232833; text-align: left; white-space: nowrap; }
+  th { color: #f4c542; font-weight: 600; background: #171a21; }
+  tr:hover td { background: #171a21; }
+  .thumb { width: 56px; height: 40px; object-fit: cover; border-radius: 6px; background: #232833; }
+  .badge { padding: 3px 9px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: capitalize; }
+  .badge.sedan { background: #1e3a5f; color: #7cc4ff; }
+  .badge.suv { background: #234b32; color: #7be0a0; }
+  .badge.bus { background: #4a2f5c; color: #d6a8ff; }
+  .badge.inactive { background: #3a1414; color: #f87171; }
+  .tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tag { font-size: 0.7rem; padding: 2px 7px; border-radius: 100px; background: #232833; color: #9aa1ac; }
+  .tag.on { background: #234b32; color: #7be0a0; }
+  .row-actions { display: flex; gap: 6px; }
+  .row-actions button { font-size: 0.75rem; padding: 6px 10px; }
+  .empty { padding: 60px 0; text-align: center; color: #9aa1ac; }
+
+  /* Modal */
+  .overlay {
+    display: none; position: fixed; inset: 0; background: rgba(6,7,10,0.7); z-index: 50;
+    align-items: flex-start; justify-content: center; overflow-y: auto; padding: 30px 16px;
+  }
+  .overlay.open { display: flex; }
+  .modal {
+    background: #171a21; border: 1px solid #262b36; border-radius: 14px; width: 100%; max-width: 720px;
+    padding: 28px 30px 30px;
+  }
+  .modal h2 { color: #f4c542; margin: 0 0 4px; font-size: 1.2rem; }
+  .modal .sub { color: #9aa1ac; font-size: 0.8rem; margin: 0 0 20px; }
+  .modal fieldset { border: 1px solid #262b36; border-radius: 10px; margin: 0 0 16px; padding: 14px 16px 16px; }
+  .modal legend { color: #f4c542; font-size: 0.82rem; padding: 0 8px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  label { display: block; color: #cfd3da; font-size: 0.8rem; margin-bottom: 5px; }
+  input[type=text], input[type=number], select {
+    width: 100%; padding: 9px 10px; border-radius: 7px; border: 1px solid #2c313c;
+    background: #10131a; color: #fff; font-size: 0.88rem; margin-bottom: 10px;
+  }
+  input:focus, select:focus { outline: none; border-color: #f4c542; }
+  .checkline { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; color: #cfd3da; font-size: 0.85rem; }
+  .checkline input { width: auto; margin: 0; }
+  .photo-row { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+  .photo-preview {
+    width: 110px; height: 74px; object-fit: cover; border-radius: 8px; background: #10131a;
+    border: 1px solid #2c313c; flex-shrink: 0;
+  }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+  .form-err { color: #f87171; font-size: 0.82rem; min-height: 18px; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Vehicle Fleet</h1>
+    <nav>
+      <a href="admin-dashboard.html">Bookings</a>
+      <a href="admin-vehicles.html" class="active">Manage Vehicles</a>
+      <button id="logoutBtn">Log Out</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div class="meta" id="metaLine">Loading vehicles...</div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn secondary" id="importBtn" style="display:none;">Import current fleet (10 vehicles)</button>
+        <button class="btn" id="addBtn">+ Add Vehicle</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="vehiclesTable" style="display:none;">
+        <thead>
+          <tr>
+            <th>Photo</th><th>Name</th><th>Category</th><th>Seats</th>
+            <th>Local</th><th>Outstation</th><th>Airport</th><th>Shown on</th><th>Status</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="vehiclesBody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="emptyState" style="display:none;">
+      No vehicles yet. Click <strong>Add Vehicle</strong>, or <strong>Import current fleet</strong> to bring in the 10 vehicles already on the website.
+    </div>
+  </main>
+
+  <!-- Add / Edit Modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2 id="modalTitle">Add Vehicle</h2>
+      <p class="sub">Fields left blank for a service just won't be priced there — untick "Show on" to hide the vehicle from that page entirely.</p>
+      <form id="vehicleForm">
+        <input type="hidden" id="vehicleId" />
+
+        <fieldset>
+          <legend>Basics</legend>
+          <div class="grid">
+            <div>
+              <label>Vehicle name *</label>
+              <input type="text" id="f_name" placeholder="e.g. Swift Dzire" required />
+            </div>
+            <div>
+              <label>Category (used for the filter buttons)</label>
+              <select id="f_category">
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV / MPV</option>
+                <option value="bus">Bus</option>
+              </select>
+            </div>
+            <div>
+              <label>Seats</label>
+              <input type="text" id="f_seats" placeholder="e.g. 4+1" />
+            </div>
+            <div>
+              <label>Luggage</label>
+              <input type="text" id="f_luggage" placeholder="e.g. 4  or  Large Group" />
+            </div>
+          </div>
+          <div class="photo-row">
+            <img id="photoPreview" class="photo-preview" src="" alt="preview" />
+            <div>
+              <label style="margin-bottom:8px;">Vehicle photo</label>
+              <input type="file" id="f_photo" accept="image/*" />
+              <div class="form-err" id="photoErr"></div>
+            </div>
+          </div>
+          <div class="checkline">
+            <input type="checkbox" id="f_active" checked />
+            <label for="f_active" style="margin:0;">Active (visible on the website at all)</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Local Cabs page</legend>
+          <div class="checkline">
+            <input type="checkbox" id="f_show_local" checked />
+            <label for="f_show_local" style="margin:0;">Show on Local Cabs page</label>
+          </div>
+          <div class="grid cols-3">
+            <div><label>Price (₹)</label><input type="number" id="f_local_price" /></div>
+            <div><label>Extra KM rate (₹)</label><input type="number" id="f_local_extra_km" /></div>
+            <div><label>Extra HR rate (₹)</label><input type="number" id="f_local_extra_hr" /></div>
+          </div>
+          <label>Package label</label>
+          <input type="text" id="f_local_package" placeholder="8Hrs 80Kms" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Outstation Cabs page</legend>
+          <div class="checkline">
+            <input type="checkbox" id="f_show_outstation" checked />
+            <label for="f_show_outstation" style="margin:0;">Show on Outstation Cabs page</label>
+          </div>
+          <div class="grid cols-3">
+            <div><label>One-way rate (₹/km)</label><input type="number" id="f_outstation_rate_oneway" /></div>
+            <div><label>Round-trip rate (₹/km)</label><input type="number" id="f_outstation_rate_roundtrip" /></div>
+            <div><label>Driver bata (₹/day)</label><input type="number" id="f_outstation_driver_bata" value="500" /></div>
+          </div>
+          <label>Minimum KM per day</label>
+          <input type="number" id="f_outstation_min_km" value="300" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Airport Taxi page</legend>
+          <div class="checkline">
+            <input type="checkbox" id="f_show_airport" checked />
+            <label for="f_show_airport" style="margin:0;">Show on Airport Taxi page</label>
+          </div>
+          <div class="grid">
+            <div><label>Price per trip (₹)</label><input type="number" id="f_airport_price" /></div>
+            <div><label>Toll (₹, extra)</label><input type="number" id="f_airport_toll" /></div>
+          </div>
+        </fieldset>
+
+        <div class="form-err" id="formErr"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn" id="saveBtn">Save Vehicle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const state = { vehicles: [], editingId: null, pendingPhotoDataUrl: null, pendingPhotoName: null };
+
+    const overlay = document.getElementById('overlay');
+    const form = document.getElementById('vehicleForm');
+    const formErr = document.getElementById('formErr');
+    const photoErr = document.getElementById('photoErr');
+
+    async function loadVehicles() {
+      const meta = document.getElementById('metaLine');
+      try {
+        const res = await fetch('/api/vehicles?all=1', { credentials: 'include' });
+        if (res.status === 401) {
+          window.location.href = 'admin-login.html';
+          return;
+        }
+        const data = await res.json();
+        if (!data.ok) {
+          meta.textContent = data.error || 'Failed to load vehicles.';
+          return;
+        }
+        if (data.warning) meta.textContent = data.warning;
+        else meta.textContent = `${data.vehicles.length} vehicle(s) in the fleet.`;
+
+        state.vehicles = data.vehicles || [];
+        document.getElementById('importBtn').style.display = state.vehicles.length === 0 ? 'inline-block' : 'none';
+        renderTable();
+      } catch (err) {
+        meta.textContent = 'Something went wrong loading vehicles.';
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('vehiclesBody');
+      const table = document.getElementById('vehiclesTable');
+      const empty = document.getElementById('emptyState');
+      tbody.innerHTML = '';
+
+      if (!state.vehicles.length) {
+        table.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      table.style.display = 'table';
+
+      state.vehicles.forEach(function (v) {
+        const tr = document.createElement('tr');
+        const shown = [];
+        if (v.show_local) shown.push('<span class="tag on">Local</span>'); else shown.push('<span class="tag">Local</span>');
+        if (v.show_outstation) shown.push('<span class="tag on">Outstation</span>'); else shown.push('<span class="tag">Outstation</span>');
+        if (v.show_airport) shown.push('<span class="tag on">Airport</span>'); else shown.push('<span class="tag">Airport</span>');
+
+        tr.innerHTML = `
+          <td><img class="thumb" src="${v.image_url || ''}" onerror="this.style.opacity=0.2" /></td>
+          <td><strong>${escapeHtml(v.name)}</strong></td>
+          <td><span class="badge ${v.category}">${v.category}</span></td>
+          <td>${escapeHtml(v.seats || '—')}</td>
+          <td>${v.local_price ? '₹' + v.local_price : '—'}</td>
+          <td>${v.outstation_rate_oneway ? '₹' + v.outstation_rate_oneway + '/km' : '—'}</td>
+          <td>${v.airport_price ? '₹' + v.airport_price : '—'}</td>
+          <td><div class="tags">${shown.join('')}</div></td>
+          <td>${v.active ? '<span class="tag on">Active</span>' : '<span class="badge inactive">Inactive</span>'}</td>
+          <td>
+            <div class="row-actions">
+              <button class="btn secondary" data-edit="${v.id}">Edit</button>
+              <button class="btn danger" data-delete="${v.id}">Delete</button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      tbody.querySelectorAll('[data-edit]').forEach(function (btn) {
+        btn.addEventListener('click', function () { openModal(Number(btn.dataset.edit)); });
+      });
+      tbody.querySelectorAll('[data-delete]').forEach(function (btn) {
+        btn.addEventListener('click', function () { deleteVehicle(Number(btn.dataset.delete)); });
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function resetForm() {
+      form.reset();
+      document.getElementById('vehicleId').value = '';
+      document.getElementById('f_outstation_driver_bata').value = 500;
+      document.getElementById('f_outstation_min_km').value = 300;
+      document.getElementById('f_local_package').value = '8Hrs 80Kms';
+      document.getElementById('f_active').checked = true;
+      document.getElementById('f_show_local').checked = true;
+      document.getElementById('f_show_outstation').checked = true;
+      document.getElementById('f_show_airport').checked = true;
+      document.getElementById('photoPreview').src = '';
+      state.pendingPhotoDataUrl = null;
+      state.pendingPhotoName = null;
+      formErr.textContent = '';
+      photoErr.textContent = '';
+    }
+
+    function openModal(id) {
+      resetForm();
+      state.editingId = id || null;
+      document.getElementById('modalTitle').textContent = id ? 'Edit Vehicle' : 'Add Vehicle';
+
+      if (id) {
+        const v = state.vehicles.find(function (x) { return x.id === id; });
+        if (v) {
+          document.getElementById('vehicleId').value = v.id;
+          document.getElementById('f_name').value = v.name || '';
+          document.getElementById('f_category').value = v.category || 'sedan';
+          document.getElementById('f_seats').value = v.seats || '';
+          document.getElementById('f_luggage').value = v.luggage || '';
+          document.getElementById('f_active').checked = !!v.active;
+          document.getElementById('photoPreview').src = v.image_url || '';
+
+          document.getElementById('f_show_local').checked = !!v.show_local;
+          document.getElementById('f_local_price').value = v.local_price ?? '';
+          document.getElementById('f_local_package').value = v.local_package || '8Hrs 80Kms';
+          document.getElementById('f_local_extra_km').value = v.local_extra_km ?? '';
+          document.getElementById('f_local_extra_hr').value = v.local_extra_hr ?? '';
+
+          document.getElementById('f_show_outstation').checked = !!v.show_outstation;
+          document.getElementById('f_outstation_rate_oneway').value = v.outstation_rate_oneway ?? '';
+          document.getElementById('f_outstation_rate_roundtrip').value = v.outstation_rate_roundtrip ?? '';
+          document.getElementById('f_outstation_driver_bata').value = v.outstation_driver_bata ?? 500;
+          document.getElementById('f_outstation_min_km').value = v.outstation_min_km ?? 300;
+
+          document.getElementById('f_show_airport').checked = !!v.show_airport;
+          document.getElementById('f_airport_price').value = v.airport_price ?? '';
+          document.getElementById('f_airport_toll').value = v.airport_toll ?? '';
+        }
+      }
+      overlay.classList.add('open');
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      state.editingId = null;
+    }
+
+    document.getElementById('addBtn').addEventListener('click', function () { openModal(null); });
+    document.getElementById('cancelBtn').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+
+    document.getElementById('f_photo').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      photoErr.textContent = '';
+      if (!file) return;
+      if (file.size > 5 * 1024 * 1024) {
+        photoErr.textContent = 'Image is too large (max 5MB).';
+        e.target.value = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function () {
+        state.pendingPhotoDataUrl = reader.result;
+        state.pendingPhotoName = file.name;
+        document.getElementById('photoPreview').src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function readForm() {
+      return {
+        name: document.getElementById('f_name').value.trim(),
+        category: document.getElementById('f_category').value,
+        seats: document.getElementById('f_seats').value.trim(),
+        luggage: document.getElementById('f_luggage').value.trim(),
+        active: document.getElementById('f_active').checked,
+
+        show_local: document.getElementById('f_show_local').checked,
+        local_price: document.getElementById('f_local_price').value,
+        local_package: document.getElementById('f_local_package').value.trim(),
+        local_extra_km: document.getElementById('f_local_extra_km').value,
+        local_extra_hr: document.getElementById('f_local_extra_hr').value,
+
+        show_outstation: document.getElementById('f_show_outstation').checked,
+        outstation_rate_oneway: document.getElementById('f_outstation_rate_oneway').value,
+        outstation_rate_roundtrip: document.getElementById('f_outstation_rate_roundtrip').value,
+        outstation_driver_bata: document.getElementById('f_outstation_driver_bata').value,
+        outstation_min_km: document.getElementById('f_outstation_min_km').value,
+
+        show_airport: document.getElementById('f_show_airport').checked,
+        airport_price: document.getElementById('f_airport_price').value,
+        airport_toll: document.getElementById('f_airport_toll').value
+      };
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      formErr.textContent = '';
+      const saveBtn = document.getElementById('saveBtn');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+
+      try {
+        const payload = readForm();
+        if (!payload.name) {
+          formErr.textContent = 'Vehicle name is required.';
+          return;
+        }
+
+        // Upload photo first, if a new one was chosen
+        if (state.pendingPhotoDataUrl) {
+          const upRes = await fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ dataUrl: state.pendingPhotoDataUrl, filename: state.pendingPhotoName })
+          });
+          const upData = await upRes.json();
+          if (!upData.ok) {
+            formErr.textContent = upData.error || 'Photo upload failed.';
+            return;
+          }
+          payload.image_url = upData.url;
+        } else if (state.editingId) {
+          const existing = state.vehicles.find(function (x) { return x.id === state.editingId; });
+          payload.image_url = existing ? existing.image_url : '';
+        } else {
+          payload.image_url = '';
+        }
+
+        const id = state.editingId;
+        const res = await fetch(id ? `/api/vehicles/${id}` : '/api/vehicles', {
+          method: id ? 'PUT' : 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          formErr.textContent = data.error || 'Failed to save vehicle.';
+          return;
+        }
+        closeModal();
+        loadVehicles();
+      } catch (err) {
+        formErr.textContent = 'Something went wrong. Please try again.';
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save Vehicle';
+      }
+    });
+
+    async function deleteVehicle(id) {
+      const v = state.vehicles.find(function (x) { return x.id === id; });
+      if (!confirm(`Delete "${v ? v.name : 'this vehicle'}"? This can't be undone.`)) return;
+      try {
+        const res = await fetch(`/api/vehicles/${id}`, { method: 'DELETE', credentials: 'include' });
+        const data = await res.json();
+        if (!data.ok) { alert(data.error || 'Failed to delete.'); return; }
+        loadVehicles();
+      } catch (err) {
+        alert('Something went wrong deleting this vehicle.');
+      }
+    }
+
+    /* ── One-click import of the 10 vehicles currently hardcoded on the site,
+       so switching over doesn't lose any existing pricing. ── */
+    const SEED_VEHICLES = [
+      { name: 'Swift Dzire', category: 'sedan', seats: '4+1', luggage: '4', image_url: 'assets/images/swift.jpg',
+        local_price: 2200, local_extra_km: 15, local_extra_hr: 150,
+        outstation_rate_oneway: 12, outstation_rate_roundtrip: 11, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1100, airport_toll: 120 },
+      { name: 'Toyota Etios', category: 'sedan', seats: '4+1', luggage: '4', image_url: 'assets/images/etios.jpg',
+        local_price: 2400, local_extra_km: 16, local_extra_hr: 160,
+        outstation_rate_oneway: 13, outstation_rate_roundtrip: 12, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1200, airport_toll: 120 },
+      { name: 'Maruti Ciaz', category: 'sedan', seats: '4+1', luggage: '4', image_url: 'assets/images/ciaz.jpg',
+        local_price: 2600, local_extra_km: 20, local_extra_hr: 200,
+        outstation_rate_oneway: 15, outstation_rate_roundtrip: 14, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1500, airport_toll: 120 },
+      { name: 'Maruti Ertiga', category: 'suv', seats: '6+1', luggage: '4', image_url: 'assets/images/ertiga.jpg',
+        local_price: 3000, local_extra_km: 20, local_extra_hr: 200,
+        outstation_rate_oneway: 16, outstation_rate_roundtrip: 15, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1700, airport_toll: 150 },
+      { name: 'Kia Carens', category: 'suv', seats: '6+1', luggage: '5', image_url: 'assets/images/caren.jpg',
+        local_price: 3200, local_extra_km: 20, local_extra_hr: 200,
+        outstation_rate_oneway: 16, outstation_rate_roundtrip: 15, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1800, airport_toll: 150 },
+      { name: 'Toyota Innova', category: 'suv', seats: '7+1', luggage: '5', image_url: 'assets/images/innovas.jpg',
+        local_price: 3400, local_extra_km: 20, local_extra_hr: 200,
+        outstation_rate_oneway: 17, outstation_rate_roundtrip: 16, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 1900, airport_toll: 150 },
+      { name: 'Innova Crysta', category: 'suv', seats: '7+1', luggage: '5', image_url: 'assets/images/crysta.jpg',
+        local_price: 3600, local_extra_km: 25, local_extra_hr: 250,
+        outstation_rate_oneway: 18, outstation_rate_roundtrip: 17, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 2200, airport_toll: 150 },
+      { name: 'Innova Hycross', category: 'suv', seats: '7+1', luggage: '5', image_url: 'assets/images/hycros.jpg',
+        local_price: 4500, local_extra_km: 30, local_extra_hr: 300,
+        outstation_rate_oneway: 22, outstation_rate_roundtrip: 21, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 2600, airport_toll: 150 },
+      { name: 'Tempo Traveller (A/C)', category: 'bus', seats: '12+1', luggage: '21', image_url: 'assets/images/tempo.jpg',
+        local_price: 5000, local_extra_km: 30, local_extra_hr: 300,
+        outstation_rate_oneway: 25, outstation_rate_roundtrip: 23, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 4500, airport_toll: 200 },
+      { name: 'Mini Bus (A/C)', category: 'bus', seats: '21+', luggage: '21', image_url: 'assets/images/minibus.jpg',
+        local_price: 8000, local_extra_km: 50, local_extra_hr: 500,
+        outstation_rate_oneway: 35, outstation_rate_roundtrip: 32, outstation_driver_bata: 500, outstation_min_km: 300,
+        airport_price: 8000, airport_toll: 500 }
+    ];
+
+    document.getElementById('importBtn').addEventListener('click', async function () {
+      if (!confirm('Import the 10 vehicles currently on the website into the backend?')) return;
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = 'Importing...';
+      try {
+        for (let i = 0; i < SEED_VEHICLES.length; i++) {
+          const v = Object.assign({ display_order: i, active: true, show_local: true, show_outstation: true, show_airport: true, local_package: '8Hrs 80Kms' }, SEED_VEHICLES[i]);
+          await fetch('/api/vehicles', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(v)
+          });
+        }
+        loadVehicles();
+      } catch (err) {
+        alert('Import failed partway through — reload and check the list.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Import current fleet (10 vehicles)';
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', async function () {
+      await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+      window.location.href = 'admin-login.html';
+    });
+
+    loadVehicles();
+  </script>
+</body>
+</html>
