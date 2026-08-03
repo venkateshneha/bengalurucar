@@ -1,5 +1,5 @@
 /* ============================================================
-   BENGALURU CAR RENTALS — Premium Redesign
+   BENGALURU CAB RENTALS — Premium Redesign
    Aesthetic: Dark luxury editorial with gold accents
    Fonts: Cormorant Garamond (display) + DM Sans (body)
    ============================================================ */
@@ -10568,4 +10568,25 @@ input:disabled,
 button:disabled,
 select:disabled {
   cursor: not-allowed !important;
+}
+/* SEO keyword footer links (managed from admin) */
+.footer-keywords {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 0;
+}
+.footer-keywords-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  justify-content: center;
+}
+.footer-keywords-inner a {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.footer-keywords-inner a:hover {
+  color: #f4c542;
 }

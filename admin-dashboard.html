@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bookings Dashboard | Bengaluru Car Rentals</title>
+<title>Bookings Dashboard | Bengaluru Cab Rentals</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -37,7 +37,12 @@
 <body>
   <header>
     <h1>Bookings Dashboard</h1>
-    <button id="logoutBtn">Log Out</button>
+    <nav style="display:flex; gap:8px; align-items:center;">
+      <a href="admin-dashboard.html" style="border:1px solid #f4c542; color:#f4c542; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Bookings</a>
+      <a href="admin-vehicles.html" style="border:1px solid #3a4152; color:#cfd3da; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Manage Vehicles</a>
+      <a href="admin-keywords.html" style="border:1px solid #3a4152; color:#cfd3da; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Manage Keywords</a>
+      <button id="logoutBtn">Log Out</button>
+    </nav>
   </header>
   <main>
     <div class="meta" id="metaLine">Loading bookings...</div>

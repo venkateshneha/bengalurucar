@@ -246,22 +246,90 @@ document.querySelectorAll('.fleet-card').forEach((card, i) => {
    AIRPORT TAXI PAGE → BOOKING.HTML
 ============================================================ */
 
-document.querySelectorAll('.airport-btn-select').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    const card = btn.closest('.airport-car-card');
+function BCR_initAirportCabs() {
+  var airportCards = document.querySelectorAll('.airport-car-card');
+  if (!airportCards.length) return;
 
-    const params = new URLSearchParams({
-      car: card.dataset.car,
-      seats: card.dataset.seats,
-      luggage: card.dataset.luggage,
-      price: card.dataset.price,
-      toll: card.dataset.toll,
-      img: card.dataset.img
+  /* ── Card reveal observer ── */
+  var airportObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('airport-card-visible');
+        airportObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.10 });
 
-    window.location.href = "booking.html?" + params.toString();
+  airportCards.forEach(function (card) {
+    airportObserver.observe(card);
   });
-});
+
+  /* ── Filter buttons ── */
+  var filterBtns = document.querySelectorAll('.airport-filter-btn');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+      airportCards.forEach(function (card) {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('airport-hidden');
+          setTimeout(function () { card.classList.add('airport-card-visible'); }, 30);
+        } else {
+          card.classList.add('airport-hidden');
+        }
+      });
+
+      resetLastRowCenter();
+    });
+  });
+
+  function resetLastRowCenter() {
+    if (window.innerWidth < 1100) return;
+    var visibleCards = Array.from(airportCards).filter(function (c) {
+      return !c.classList.contains('airport-hidden');
+    });
+    visibleCards.forEach(function (c) { c.style.gridColumn = ''; });
+
+    var cols = 4;
+    var lastRowCount = visibleCards.length % cols;
+    if (lastRowCount === 0) return;
+    var lastRowCards = visibleCards.slice(-lastRowCount);
+
+    if (lastRowCount === 1) {
+      lastRowCards[0].style.gridColumn = '2 / 4';
+    } else if (lastRowCount === 2) {
+      lastRowCards[0].style.gridColumn = '2 / 3';
+      lastRowCards[1].style.gridColumn = '3 / 4';
+    } else if (lastRowCount === 3) {
+      lastRowCards[0].style.gridColumn = '1 / 2';
+      lastRowCards[1].style.gridColumn = '2 / 3';
+      lastRowCards[2].style.gridColumn = '3 / 4';
+    }
+  }
+
+  /* ── Book Now → booking.html ── */
+  document.querySelectorAll('.airport-btn-select').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const card = btn.closest('.airport-car-card');
+
+      const params = new URLSearchParams({
+        car: card.dataset.car,
+        seats: card.dataset.seats,
+        luggage: card.dataset.luggage,
+        price: card.dataset.price,
+        toll: card.dataset.toll,
+        img: card.dataset.img
+      });
+
+      window.location.href = "booking.html?" + params.toString();
+    });
+  });
+}
+BCR_initAirportCabs();
+window.BCR_initAirportCabs = BCR_initAirportCabs;
+
 
 
 /* ============================================================
@@ -485,7 +553,7 @@ document.querySelectorAll('.airport-btn-select').forEach(function (btn) {
    LOCAL CABS PAGE — Add at bottom of script.js
    ============================================================ */
 
-(function () {
+function BCR_initLocalCabs() {
   /* ── Card reveal observer ── */
   var lcCards = document.querySelectorAll('.lc-car-card');
   if (!lcCards.length) return;
@@ -566,13 +634,15 @@ document.querySelectorAll('.airport-btn-select').forEach(function (btn) {
       window.location.href = 'booking-local.html?' + params.toString();
     });
   });
-})();
+}
+BCR_initLocalCabs();
+window.BCR_initLocalCabs = BCR_initLocalCabs;
 
 /* ============================================================
    OUTSTATION CABS PAGE — Add at bottom of script.js
    ============================================================ */
 
-(function () {
+function BCR_initOutstationCabs() {
   var ocCards = document.querySelectorAll('.oc-car-card');
   if (!ocCards.length) return;
 
@@ -681,7 +751,9 @@ document.querySelectorAll('.airport-btn-select').forEach(function (btn) {
     });
   });
 
-})();
+}
+BCR_initOutstationCabs();
+window.BCR_initOutstationCabs = BCR_initOutstationCabs;
 
 /* ============================================================
    TOUR PACKAGES PAGE — Add at bottom of script.js

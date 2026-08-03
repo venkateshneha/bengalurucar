@@ -33,4 +33,60 @@ async function ensureTable() {
   tableReady = true;
 }
 
-module.exports = { sql, ensureTable };
+let vehiclesTableReady = false;
+
+async function ensureVehiclesTable() {
+  if (vehiclesTableReady) return;
+  await sql`
+    CREATE TABLE IF NOT EXISTS vehicles (
+      id SERIAL PRIMARY KEY,
+      name TEXT NOT NULL,
+      category TEXT NOT NULL DEFAULT 'sedan',
+      seats TEXT,
+      luggage TEXT,
+      image_url TEXT,
+      display_order INTEGER DEFAULT 0,
+      active BOOLEAN DEFAULT true,
+
+      show_local BOOLEAN DEFAULT true,
+      local_price NUMERIC,
+      local_package TEXT DEFAULT '8Hrs 80Kms',
+      local_extra_km NUMERIC,
+      local_extra_hr NUMERIC,
+
+      show_outstation BOOLEAN DEFAULT true,
+      outstation_rate_oneway NUMERIC,
+      outstation_rate_roundtrip NUMERIC,
+      outstation_driver_bata NUMERIC DEFAULT 500,
+      outstation_min_km NUMERIC DEFAULT 300,
+
+      show_airport BOOLEAN DEFAULT true,
+      airport_price NUMERIC,
+      airport_toll NUMERIC,
+
+      created_at TIMESTAMPTZ DEFAULT NOW(),
+      updated_at TIMESTAMPTZ DEFAULT NOW()
+    );
+  `;
+  vehiclesTableReady = true;
+}
+
+let seoLinksTableReady = false;
+
+async function ensureSeoLinksTable() {
+  if (seoLinksTableReady) return;
+  await sql`
+    CREATE TABLE IF NOT EXISTS seo_links (
+      id SERIAL PRIMARY KEY,
+      label TEXT NOT NULL,
+      url TEXT NOT NULL,
+      display_order INTEGER DEFAULT 0,
+      active BOOLEAN DEFAULT true,
+      created_at TIMESTAMPTZ DEFAULT NOW(),
+      updated_at TIMESTAMPTZ DEFAULT NOW()
+    );
+  `;
+  seoLinksTableReady = true;
+}
+
+module.exports = { sql, ensureTable, ensureVehiclesTable, ensureSeoLinksTable };

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manage Keywords | Bengaluru Cab Rentals</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #0f1115; color: #e5e7eb;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; border-bottom: 1px solid #262b36; background: #171a21;
+  }
+  header h1 { font-size: 1.15rem; margin: 0; color: #f4c542; }
+  header button {
+    background: transparent; border: 1px solid #3a4152; color: #cfd3da; padding: 8px 16px;
+    border-radius: 8px; cursor: pointer; font-size: 0.85rem;
+  }
+  header button:hover { border-color: #f4c542; color: #f4c542; }
+  main { padding: 24px 28px; max-width: 900px; margin: 0 auto; }
+  .meta { color: #9aa1ac; font-size: 0.85rem; margin-bottom: 16px; }
+
+  .add-card {
+    background: #171a21; border: 1px solid #232833; border-radius: 12px; padding: 20px;
+    margin-bottom: 24px;
+  }
+  .add-card h3 { margin: 0 0 14px; color: #f4c542; font-size: 1rem; }
+  .form-row { display: grid; grid-template-columns: 2fr 3fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .form-row input {
+    background: #0f1115; border: 1px solid #3a4152; color: #e5e7eb; padding: 10px 12px;
+    border-radius: 8px; font-size: 0.85rem; width: 100%;
+  }
+  .form-row input:focus { outline: none; border-color: #f4c542; }
+  .btn {
+    background: #f4c542; color: #171a21; border: none; padding: 10px 18px; border-radius: 8px;
+    cursor: pointer; font-size: 0.85rem; font-weight: 600;
+  }
+  .btn:hover { background: #ffd75c; }
+  .btn.secondary { background: transparent; border: 1px solid #3a4152; color: #cfd3da; }
+  .btn.secondary:hover { border-color: #f4c542; color: #f4c542; }
+  .btn.danger { background: transparent; border: 1px solid #7c3030; color: #ff8f8f; }
+  .btn.danger:hover { background: #3a1414; }
+  .error-msg { color: #ff8f8f; font-size: 0.8rem; margin-top: 6px; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid #232833; border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid #232833; text-align: left; }
+  th { color: #f4c542; font-weight: 600; background: #171a21; }
+  tr:hover td { background: #171a21; }
+  td.actions { white-space: nowrap; }
+  td.actions button { margin-right: 6px; }
+  .row-input {
+    background: #0f1115; border: 1px solid #3a4152; color: #e5e7eb; padding: 6px 8px;
+    border-radius: 6px; font-size: 0.83rem; width: 100%;
+  }
+  .inactive-row td { opacity: 0.5; }
+  .empty { padding: 60px 0; text-align: center; color: #9aa1ac; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Manage Keywords</h1>
+    <nav style="display:flex; gap:8px; align-items:center;">
+      <a href="admin-dashboard.html" style="border:1px solid #3a4152; color:#cfd3da; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Bookings</a>
+      <a href="admin-vehicles.html" style="border:1px solid #3a4152; color:#cfd3da; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Manage Vehicles</a>
+      <a href="admin-keywords.html" style="border:1px solid #f4c542; color:#f4c542; padding:8px 16px; border-radius:8px; text-decoration:none; font-size:0.85rem;">Manage Keywords</a>
+      <button id="logoutBtn">Log Out</button>
+    </nav>
+  </header>
+  <main>
+    <div class="meta" id="metaLine">These links show in the footer on every page of the website — like "Car Rental Bangalore to Coorg". Add as many as you like.</div>
+
+    <div class="add-card">
+      <h3>Add a new keyword link</h3>
+      <div class="form-row">
+        <input id="newLabel" placeholder="Text to show, e.g. Car Rental Bangalore to Coorg" />
+        <input id="newUrl" placeholder="Page it links to, e.g. bangalore-to-coorg.html" />
+        <input id="newOrder" type="number" placeholder="Order (0 first)" />
+      </div>
+      <button class="btn" id="addBtn">+ Add Link</button>
+      <div class="error-msg" id="addError"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="linksTable" style="display:none;">
+        <thead>
+          <tr>
+            <th style="width:40px;">#</th>
+            <th>Text (label)</th>
+            <th>Links to (URL)</th>
+            <th style="width:80px;">Order</th>
+            <th style="width:70px;">Active</th>
+            <th style="width:150px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="linksBody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="emptyState" style="display:none;">No keyword links yet — add your first one above.</div>
+  </main>
+
+  <script>
+    let allLinks = [];
+
+    async function loadLinks() {
+      const meta = document.getElementById('metaLine');
+      try {
+        const res = await fetch('/api/seo-links?all=1', { credentials: 'include' });
+        if (res.status === 401) {
+          window.location.href = 'admin-login.html';
+          return;
+        }
+        const data = await res.json();
+        if (!data.ok) {
+          meta.textContent = data.error || 'Failed to load links.';
+          return;
+        }
+        allLinks = data.links || [];
+        renderTable();
+      } catch (err) {
+        meta.textContent = 'Something went wrong loading links.';
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('linksBody');
+      tbody.innerHTML = '';
+
+      if (!allLinks.length) {
+        document.getElementById('emptyState').style.display = 'block';
+        document.getElementById('linksTable').style.display = 'none';
+        return;
+      }
+      document.getElementById('emptyState').style.display = 'none';
+      document.getElementById('linksTable').style.display = 'table';
+
+      allLinks.forEach(function (link, i) {
+        const tr = document.createElement('tr');
+        tr.className = link.active ? '' : 'inactive-row';
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td><input class="row-input" data-field="label" value="${escapeHtml(link.label)}" /></td>
+          <td><input class="row-input" data-field="url" value="${escapeHtml(link.url)}" /></td>
+          <td><input class="row-input" data-field="display_order" type="number" value="${link.display_order}" /></td>
+          <td><input type="checkbox" data-field="active" ${link.active ? 'checked' : ''} /></td>
+          <td class="actions">
+            <button class="btn secondary" data-action="save">Save</button>
+            <button class="btn danger" data-action="delete">Delete</button>
+          </td>
+        `;
+        tr.querySelector('[data-action="save"]').addEventListener('click', function () {
+          saveLink(link.id, tr);
+        });
+        tr.querySelector('[data-action="delete"]').addEventListener('click', function () {
+          deleteLink(link.id);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str || '';
+      return div.innerHTML;
+    }
+
+    async function saveLink(id, tr) {
+      const label = tr.querySelector('[data-field="label"]').value.trim();
+      const url = tr.querySelector('[data-field="url"]').value.trim();
+      const display_order = tr.querySelector('[data-field="display_order"]').value;
+      const active = tr.querySelector('[data-field="active"]').checked;
+
+      if (!label || !url) {
+        alert('Text and URL cannot be empty.');
+        return;
+      }
+
+      const res = await fetch('/api/seo-links/' + id, {
+        method: 'PUT',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ label, url, display_order, active })
+      });
+      const data = await res.json();
+      if (!data.ok) {
+        alert(data.error || 'Failed to save.');
+        return;
+      }
+      loadLinks();
+    }
+
+    async function deleteLink(id) {
+      if (!confirm('Delete this keyword link? This cannot be undone.')) return;
+      const res = await fetch('/api/seo-links/' + id, { method: 'DELETE', credentials: 'include' });
+      const data = await res.json();
+      if (!data.ok) {
+        alert(data.error || 'Failed to delete.');
+        return;
+      }
+      loadLinks();
+    }
+
+    document.getElementById('addBtn').addEventListener('click', async function () {
+      const label = document.getElementById('newLabel').value.trim();
+      const url = document.getElementById('newUrl').value.trim();
+      const display_order = document.getElementById('newOrder').value || 0;
+      const errorEl = document.getElementById('addError');
+      errorEl.textContent = '';
+
+      if (!label || !url) {
+        errorEl.textContent = 'Please fill in both the text and the link.';
+        return;
+      }
+
+      const res = await fetch('/api/seo-links', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ label, url, display_order, active: true })
+      });
+      const data = await res.json();
+      if (!data.ok) {
+        errorEl.textContent = data.error || 'Failed to add link.';
+        return;
+      }
+      document.getElementById('newLabel').value = '';
+      document.getElementById('newUrl').value = '';
+      document.getElementById('newOrder').value = '';
+      loadLinks();
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', async function () {
+      await fetch('/api/logout', { method: 'POST', credentials: 'include' });
+      window.location.href = 'admin-login.html';
+    });
+
+    loadLinks();
+  </script>
+</body>
+</html>

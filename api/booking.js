@@ -149,7 +149,7 @@ module.exports = async function handler(req, res) {
 
     // Email to the business owner
     await transporter.sendMail({
-      from: `"BengaluruCarRentals Website" <${EMAIL_USER}>`,
+      from: `"BengaluruCabRentals Website" <${EMAIL_USER}>`,
       to: OWNER_EMAIL,
       subject: `New ${pageType} booking — ${name} (${phone})`,
       text: textSummary,
@@ -158,11 +158,11 @@ module.exports = async function handler(req, res) {
 
     // Confirmation email to the customer
     await transporter.sendMail({
-      from: `"Bengaluru Car Rentals" <${EMAIL_USER}>`,
+      from: `"Bengaluru Cab Rentals" <${EMAIL_USER}>`,
       to: email,
-      subject: 'We received your booking — Bengaluru Car Rentals',
-      text: `Hi ${name},\n\nThanks for booking with Bengaluru Car Rentals! Our team will confirm your ride shortly.\n\n${textSummary}\n\nFor urgent help call +91 9152333388.`,
-      html: `<p>Hi ${escapeHtml(name)},</p><p>Thanks for booking with <strong>Bengaluru Car Rentals</strong>! Our team will confirm your ride shortly.</p><table style="border-collapse:collapse;">${htmlRows}</table><p>For urgent help call <strong>+91 9152333388</strong>.</p>`
+      subject: 'We received your booking — Bengaluru Cab Rentals',
+      text: `Hi ${name},\n\nThanks for booking with Bengaluru Cab Rentals! Our team will confirm your ride shortly.\n\n${textSummary}\n\nFor urgent help call +91 9152333388.`,
+      html: `<p>Hi ${escapeHtml(name)},</p><p>Thanks for booking with <strong>Bengaluru Cab Rentals</strong>! Our team will confirm your ride shortly.</p><table style="border-collapse:collapse;">${htmlRows}</table><p>For urgent help call <strong>+91 9152333388</strong>.</p>`
     });
 
     return res.status(200).json({ ok: true, emailed: true });
