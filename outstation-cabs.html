@@ -381,69 +381,6 @@
   </script>
  
   <script>
-    /* Load vehicles from the backend and render Outstation Cabs cards */
-    (function () {
-      function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-      function cardHtml(v) {
-        var oneway = v.outstation_rate_oneway != null ? Number(v.outstation_rate_oneway).toFixed(2) : '0.00';
-        var roundtrip = v.outstation_rate_roundtrip != null ? Number(v.outstation_rate_roundtrip).toFixed(2) : '0.00';
-        var bata = v.outstation_driver_bata != null ? v.outstation_driver_bata : 500;
-        var minKm = v.outstation_min_km != null ? v.outstation_min_km : 300;
-        var img = v.image_url || 'assets/images/swift.jpg';
-        var waText = encodeURIComponent('Hi, I want to book Outstation Cab - ' + v.name);
-
-        return '' +
-        '<div class="oc-car-card reveal active" data-category="' + esc(v.category) + '"' +
-          ' data-car="' + esc(v.name) + '"' +
-          ' data-seats="' + esc(v.seats) + '"' +
-          ' data-luggage="' + esc(v.luggage) + '"' +
-          ' data-rate-oneway="' + esc(v.outstation_rate_oneway) + '"' +
-          ' data-rate-roundtrip="' + esc(v.outstation_rate_roundtrip) + '"' +
-          ' data-driver-bata="' + esc(bata) + '"' +
-          ' data-min-km="' + esc(minKm) + '"' +
-          ' data-img="' + esc(img) + '">' +
-          '<div class="oc-car-img-wrap"><img src="' + esc(img) + '" alt="' + esc(v.name) + ' outstation cab Bangalore" /></div>' +
-          '<div class="oc-car-body">' +
-            '<h3 class="oc-car-name">' + esc(v.name) + '</h3>' +
-            '<div class="oc-car-pkg">' + esc(minKm) + ' Kms minimum rental per day</div>' +
-            '<div class="oc-car-extra">Driver Bata \u20B9' + esc(bata) + '/day</div>' +
-            '<div class="oc-car-meta">' +
-              '<span><i class="fa-solid fa-users"></i> ' + esc(v.seats) + ' People</span>' +
-              '<span><i class="fa-solid fa-suitcase"></i> ' + esc(v.luggage) + ' luggage</span>' +
-            '</div>' +
-            '<div class="oc-car-stars">\u2605\u2605\u2605\u2605\u2606</div>' +
-            '<div class="oc-car-price-wrap">' +
-              '<div class="oc-car-price oc-price-oneway">Rs. ' + oneway + '/km</div>' +
-              '<div class="oc-car-price oc-price-roundtrip" style="display:none;">Rs. ' + roundtrip + '/km</div>' +
-            '</div>' +
-            '<div class="oc-car-actions">' +
-              '<button class="oc-btn-select" aria-label="Book ' + esc(v.name) + '">Book Now</button>' +
-              '<a href="https://wa.me/919152333388?text=' + waText + '" target="_blank" class="oc-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-      }
-
-      fetch('/api/vehicles?type=outstation')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          var grid = document.getElementById('ocCarsGrid');
-          if (!data.ok || !data.vehicles || !data.vehicles.length) {
-            grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px 0; color:#6b7280;">Vehicles will appear here shortly. Please check back soon.</p>';
-            return;
-          }
-          grid.innerHTML = data.vehicles.map(cardHtml).join('');
-          if (window.BCR_initOutstationCabs) window.BCR_initOutstationCabs();
-        })
-        .catch(function () {
-          var grid = document.getElementById('ocCarsGrid');
-          grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px 0; color:#6b7280;">Could not load vehicles right now. Please refresh the page.</p>';
-        });
-    })();
-  </script>
- 
-  <script>
     document.getElementById('mobileServicesToggle').addEventListener('click', function () {
       document.getElementById('mobileDropdown').classList.toggle('open');
     });

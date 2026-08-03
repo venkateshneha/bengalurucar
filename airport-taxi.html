@@ -339,62 +339,6 @@
     })();
   </script>
   <script>
-    /* Load vehicles from the backend and render Airport Taxi cards */
-    (function () {
-      function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-      function cardHtml(v) {
-        var price = v.airport_price != null ? Number(v.airport_price).toLocaleString('en-IN') : '0';
-        var toll = v.airport_toll != null ? Number(v.airport_toll).toLocaleString('en-IN') : '0';
-        var img = v.image_url || 'assets/images/swift.jpg';
-        var waText = encodeURIComponent('Hi, I want to book Airport Taxi with ' + v.name);
-
-        return '' +
-        '<div class="airport-car-card reveal active" data-category="' + esc(v.category) + '"' +
-          ' data-car="' + esc(v.name) + '"' +
-          ' data-seats="' + esc(v.seats) + '"' +
-          ' data-luggage="' + esc(v.luggage) + '"' +
-          ' data-price="\u20B9' + price + '"' +
-          ' data-toll="\u20B9' + toll + '"' +
-          ' data-img="' + esc(img) + '">' +
-          '<div class="airport-car-img-wrap"><img src="' + esc(img) + '" alt="' + esc(v.name) + ' airport taxi Bangalore" /></div>' +
-          '<div class="airport-car-body">' +
-            '<h3 class="airport-car-name">' + esc(v.name) + '</h3>' +
-            '<div class="airport-car-meta">' +
-              '<span><i class="fa-solid fa-users"></i> ' + esc(v.seats) + ' People</span>' +
-              '<span><i class="fa-solid fa-suitcase"></i> ' + esc(v.luggage) + ' Luggage</span>' +
-            '</div>' +
-            '<div class="airport-car-stars">\u2605\u2605\u2605\u2605\u2605</div>' +
-            '<div class="airport-car-price">\u20B9' + price + '<small>/trip</small></div>' +
-            '<div class="airport-car-toll">Toll: \u20B9' + toll + ' extra</div>' +
-            '<div class="airport-car-actions">' +
-              '<button class="airport-btn-select" aria-label="Book ' + esc(v.name) + '">Book Now</button>' +
-              '<a href="https://wa.me/919152333388?text=' + waText + '" target="_blank" class="airport-btn-whatsapp" aria-label="WhatsApp ' + esc(v.name) + '">' +
-                '<i class="fa-brands fa-whatsapp"></i> WhatsApp' +
-              '</a>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-      }
-
-      fetch('/api/vehicles?type=airport')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          var grid = document.getElementById('airportCarsGrid');
-          if (!data.ok || !data.vehicles || !data.vehicles.length) {
-            grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px 0; color:#6b7280;">Vehicles will appear here shortly. Please check back soon.</p>';
-            return;
-          }
-          grid.innerHTML = data.vehicles.map(cardHtml).join('');
-          if (window.BCR_initAirportCabs) window.BCR_initAirportCabs();
-        })
-        .catch(function () {
-          var grid = document.getElementById('airportCarsGrid');
-          grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px 0; color:#6b7280;">Could not load vehicles right now. Please refresh the page.</p>';
-        });
-    })();
-  </script>
-  <script>
     document.getElementById('mobileServicesToggle').addEventListener('click', function () {
       document.getElementById('mobileDropdown').classList.toggle('open');
     });
