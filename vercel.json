@@ -1,0 +1,68 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-to-coorg-cab-service.html",
+      "destination": "/bangalore-to-coorg.html",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-to-ooty-cab-service.html",
+      "destination": "/bangalore-to-ooty.html",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-to-wayanad-cab-service.html",
+      "destination": "/bangalore-to-wayanad.html",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-to-hogenakkal-cab-service.html",
+      "destination": "/bangalore-to-hogenakkal.html",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-to-chikmagalur-cab-service.html",
+      "destination": "/bangalore-to-chikmagalur-cabs.html",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-mysore-ooty-coorg-tour-package.html",
+      "destination": "/bangalore-mysore-ooty-coorg-tour.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/admin-(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/booking(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
+  ]
+}
